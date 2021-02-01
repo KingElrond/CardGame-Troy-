@@ -32,10 +32,10 @@ import java.util.ArrayList;
 
 public class CarBuyingProgramTroy extends JFrame implements ActionListener
 {
-  private JRadioButton small, medium, large; 
+  private JRadioButton lx, sport, Touring; 
   private JButton order;
-  private JToggleButton toGo;
-  private JCheckBox cheese, mushrooms, pepperoni;
+  private JToggleButton useDealership;
+  private JCheckBox cBlack, cblue, cRed;
   private ArrayList<String> top;
   private JTextField display;
     
@@ -47,14 +47,14 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
         new LineBorder(Color.black, 1)); // outside, 1 pixel thick
 
     
-    small = new JRadioButton("Small");
-    medium = new JRadioButton("Medium");
-    large = new JRadioButton("Large", true);
+    lx = new JRadioButton("LX +$21,250");
+    sport = new JRadioButton("Sport +$23,050");
+    Touring = new JRadioButton("Touring +$28,300", true);
 
     ButtonGroup gr = new ButtonGroup();
-    gr.add(small);
-    gr.add(medium);
-    gr.add(large);
+    gr.add(lx);
+    gr.add(sport);
+    gr.add(Touring);
     
     
     
@@ -64,23 +64,23 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
     JPanel sizes  = new JPanel();
     sizes.setBorder(border);
     sizes.setLayout(new GridLayout(3, 1, 10, 10));
-    sizes.add(small);
-    sizes.add(medium);
-    sizes.add(large);
+    sizes.add(lx);
+    sizes.add(sport);
+    sizes.add(Touring);
 
-    cheese = new JCheckBox("Extra cheese");
-    mushrooms = new JCheckBox("Mushrooms");
-    pepperoni = new JCheckBox("Pepperoni");
+    cBlack = new JCheckBox("Black");
+    cblue = new JCheckBox("Blue");
+    cRed = new JCheckBox("Molten Lava Pearl +$395");
 
     JPanel toppings  = new JPanel();
     toppings.setBorder(border);
     toppings.setLayout(new GridLayout(3, 1, 10, 10));
-    toppings.add(cheese);
-    toppings.add(mushrooms);
-    toppings.add(pepperoni);
+    toppings.add(cBlack);
+    toppings.add(cblue);
+    toppings.add(cRed);
     
     order = new JButton("Order");
-    toGo = new JToggleButton("To go", false);
+    useDealership = new JToggleButton("buy at dealership", false);
     
     order.addActionListener(this);
     
@@ -97,7 +97,7 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
     JPanel buttons = new JPanel();
     buttons.setBorder(border);
     buttons.setLayout(new GridLayout(3,1,10,10));
-    buttons.add(toGo);
+    buttons.add(useDealership);
     buttons.add(order);
     
     
@@ -133,36 +133,42 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
    {
        JButton click = (JButton)e.getSource();
        String size = "";
+       int price = 0;
        top = new ArrayList<>();
        
        
-       if(small.isSelected())
+       if(lx.isSelected())
        {
-           size = "small";
-           
+           size = "2021 Civic LX Sedan";
+           price = 21250;
        }
-       else if(medium.isSelected())
+       else if(sport.isSelected())
        {
-           size= "medium";
+           size= "2021 Civic Sport Sedan";
+           price = 23050;
        }
        else 
        {
-           size = "large";
+           size = "2021 Civic Touring Sedan";
+           price = 28300;
        }
        
-       if(cheese.isSelected())
-           top.add("extra cheese");
-       if(mushrooms.isSelected())
-           top.add("mushrooms");
-       if(pepperoni.isSelected())
-           top.add("pepperoni");
+       if(cBlack.isSelected())
+           top.add("Black");
+       if(cblue.isSelected())
+           top.add("Blue");
+       if(cRed.isSelected())
+       {
+           top.add("Molten Lava Pearl");
+           price = price+395;
+       }
        
        String tops = "";
        
        for(String t : top)
            tops = tops + t + " ";
        
-       String pizza = "You ordered a " + size + " pizza with " + tops;       
+       String pizza = "You ordered a " + size + " in " + tops + "for: $" + price;       
        
        if(click == order)
        {
@@ -176,7 +182,7 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
   public static void main(String[] args)
   {
     CarBuyingProgramTroy window = new CarBuyingProgramTroy();
-    window.setBounds(100, 100, 350, 300);
+    window.setBounds(100, 100, 500, 300);
     window.setDefaultCloseOperation(EXIT_ON_CLOSE);
     window.setResizable(false);
     window.setVisible(true);
