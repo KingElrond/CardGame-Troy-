@@ -243,8 +243,10 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
        
        if(click == order)
        {
-           
-           
+           if(useDealership.isSelected())
+           {
+               pizza = pizza + "\nGo to dealership to pay for and recieve Vehicle.";
+           }
            JOptionPane.showMessageDialog(CarBuyingProgramTroy.this, pizza);
        } else if(click == updateimg)
        {
