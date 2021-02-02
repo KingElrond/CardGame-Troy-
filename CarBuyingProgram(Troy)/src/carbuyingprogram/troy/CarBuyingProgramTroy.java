@@ -29,17 +29,29 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 public class CarBuyingProgramTroy extends JFrame implements ActionListener
 {
-  private JRadioButton lx, sport, Touring; 
-  private JButton order;
+  private JRadioButton lx, sport, touring; 
+  private JButton order, updateimg;
   private JToggleButton useDealership;
-  private JCheckBox cBlack, cblue, cRed;
+  private JRadioButton cBlack, cblue, cRed;
   private ArrayList<String> top;
-  private JTextField display;
-    
-    
+  private JTextArea display;
+  private JLabel img;
+  private ImageIcon LXBlue = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\LXBlue.jpeg");
+  private ImageIcon LXWhite = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\LXWhite.jpeg");
+  private ImageIcon LXBlack = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\LXBlack.jpeg");
+  private ImageIcon SportBlack = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\SportBlack.jpeg");
+  private ImageIcon SportBlue = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\SportBlue.jpeg");
+  private ImageIcon SportWhite = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\SportWhite.jpeg");
+  private ImageIcon TBlue = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\TBlue.jpeg");
+  private ImageIcon TWhite = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\Tpwp.jpeg");
+  private ImageIcon TBlack = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\TBlack.jpeg");
+  
   public CarBuyingProgramTroy()
   {
     CompoundBorder border = new CompoundBorder(
@@ -47,14 +59,14 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
         new LineBorder(Color.black, 1)); // outside, 1 pixel thick
 
     
-    lx = new JRadioButton("LX +$21,250");
+    lx = new JRadioButton("LX +$21,250", true);
     sport = new JRadioButton("Sport +$23,050");
-    Touring = new JRadioButton("Touring +$28,300", true);
+    touring = new JRadioButton("Touring +$28,300");
 
     ButtonGroup gr = new ButtonGroup();
     gr.add(lx);
     gr.add(sport);
-    gr.add(Touring);
+    gr.add(touring);
     
     
     
@@ -66,12 +78,17 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
     sizes.setLayout(new GridLayout(3, 1, 10, 10));
     sizes.add(lx);
     sizes.add(sport);
-    sizes.add(Touring);
+    sizes.add(touring);
 
-    cBlack = new JCheckBox("Black");
-    cblue = new JCheckBox("Blue");
-    cRed = new JCheckBox("Molten Lava Pearl +$395");
+    cBlack = new JRadioButton("Black");
+    cblue = new JRadioButton("Blue", true);
+    cRed = new JRadioButton("Platinum Pearl White +$395");
 
+    ButtonGroup co = new ButtonGroup();
+    co.add(cBlack);
+    co.add(cblue);
+    co.add(cRed);
+    
     JPanel toppings  = new JPanel();
     toppings.setBorder(border);
     toppings.setLayout(new GridLayout(3, 1, 10, 10));
@@ -81,24 +98,31 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
     
     order = new JButton("Order");
     useDealership = new JToggleButton("buy at dealership", false);
+    updateimg = new JButton("update img preview");
     
     order.addActionListener(this);
+    updateimg.addActionListener(this);
     
-    display = new JTextField(10);
+    display = new JTextArea(10,10);
     display.setBackground(Color.yellow);
     display.setEditable(false);
+    
+    img = new JLabel();
+    img.setIcon(LXBlue);
+    img.setOpaque(true);
     
     JPanel disp = new JPanel();
     disp.setBorder(border);
     disp.setLayout(new GridLayout(1,2,10,10));
+    disp.add(img);
     disp.add(display);
-    
     
     JPanel buttons = new JPanel();
     buttons.setBorder(border);
     buttons.setLayout(new GridLayout(3,1,10,10));
     buttons.add(useDealership);
     buttons.add(order);
+    buttons.add(updateimg);
     
     
    
@@ -133,7 +157,10 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
    {
        JButton click = (JButton)e.getSource();
        String size = "";
+       int sizeprice = 0;
+       String tops = "";
        int price = 0;
+       int topsprice = 0;
        top = new ArrayList<>();
        
        
@@ -141,29 +168,73 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
        {
            size = "2021 Civic LX Sedan";
            price = 21250;
+           sizeprice = 21250;
        }
        else if(sport.isSelected())
        {
            size= "2021 Civic Sport Sedan";
            price = 23050;
+           sizeprice = 23050;
        }
        else 
        {
            size = "2021 Civic Touring Sedan";
            price = 28300;
+           sizeprice = 28300;
        }
        
        if(cBlack.isSelected())
-           top.add("Black");
-       if(cblue.isSelected())
-           top.add("Blue");
-       if(cRed.isSelected())
        {
-           top.add("Molten Lava Pearl");
+           top.add("Black");
+           if(lx.isSelected())
+           {
+           img.setIcon(LXBlack);
+           }
+           if(sport.isSelected())
+           {
+           img.setIcon(SportBlack);
+           }
+           if(touring.isSelected())
+           {
+               img.setIcon(TBlack);
+           }
+       }
+       else if(cblue.isSelected())
+       {
+           top.add("Blue");
+           if(lx.isSelected())
+           {
+           img.setIcon(LXBlue);
+           }
+           if(sport.isSelected())
+           {
+               img.setIcon(SportBlue);
+           }
+           if(touring.isSelected())
+           {
+               img.setIcon(TBlue);
+           }
+        }
+       else if(cRed.isSelected())
+       {
+           if(lx.isSelected())
+           {
+           img.setIcon(LXWhite);
+           }
+           if(sport.isSelected())
+           {
+               img.setIcon(SportWhite);
+           }
+           if(touring.isSelected())
+           {
+               img.setIcon(TWhite);
+           }
+          top.add("Platinum Pearl White");
            price = price+395;
+           topsprice = 395;
        }
        
-       String tops = "";
+       
        
        for(String t : top)
            tops = tops + t + " ";
@@ -172,8 +243,14 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
        
        if(click == order)
        {
-           display.setText("small");
+           
+           
            JOptionPane.showMessageDialog(CarBuyingProgramTroy.this, pizza);
+       } else if(click == updateimg)
+       {
+           display.setText(size + " $" + sizeprice + "\n" + tops + " $" + topsprice + "\nTotal: $" + price);
+           JOptionPane.showMessageDialog(CarBuyingProgramTroy.this, "Image preview Updated");
+           
        }
        
       
@@ -182,9 +259,9 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
   public static void main(String[] args)
   {
     CarBuyingProgramTroy window = new CarBuyingProgramTroy();
-    window.setBounds(100, 100, 500, 300);
+    window.setBounds(100, 100, 550, 300);
     window.setDefaultCloseOperation(EXIT_ON_CLOSE);
-    window.setResizable(false);
+    window.setResizable(true);
     window.setVisible(true);
     
   }
