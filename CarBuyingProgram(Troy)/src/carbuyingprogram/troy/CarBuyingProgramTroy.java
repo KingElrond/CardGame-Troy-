@@ -36,12 +36,13 @@ import javax.swing.JTextArea;
 public class CarBuyingProgramTroy extends JFrame implements ActionListener
 {
   private JRadioButton lx, sport, touring; 
-  private JButton order, updateimg;
-  private JToggleButton useDealership;
+  private JButton order, updateimg, stupidpreventerrorthing;
+  private JToggleButton useDealership, Nopak;
   private JRadioButton cBlack, cblue, cRed;
+  private JCheckBox RGBk, ASPPII, PP;
   private ArrayList<String> top;
   private JTextArea display;
-  private JLabel img;
+  private JLabel img, pimg, pimg2, pimg3;
   private ImageIcon LXBlue = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\LXBlue.jpeg");
   private ImageIcon LXWhite = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\LXWhite.jpeg");
   private ImageIcon LXBlack = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\LXBlack.jpeg");
@@ -51,6 +52,11 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
   private ImageIcon TBlue = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\TBlue.jpeg");
   private ImageIcon TWhite = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\Tpwp.jpeg");
   private ImageIcon TBlack = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\TBlack.jpeg");
+  private ImageIcon RGBkit = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\RGB.jpeg");
+  private ImageIcon ASPP = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\ASPP.jpeg");
+  private ImageIcon PPimg = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\PP.jpeg");
+  private ImageIcon Nopakimg = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\Nopak.jpeg");
+  
   
   public CarBuyingProgramTroy()
   {
@@ -63,15 +69,25 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
     sport = new JRadioButton("Sport +$23,050");
     touring = new JRadioButton("Touring +$28,300");
 
+    lx.addActionListener(this);
+    sport.addActionListener(this);
+    touring.addActionListener(this);
+    
     ButtonGroup gr = new ButtonGroup();
     gr.add(lx);
     gr.add(sport);
     gr.add(touring);
     
-    
-    
-    
-    
+    RGBk = new JCheckBox("Red Interior Illumination Kit +$1,060");
+    ASPPII = new JCheckBox("All-Season ProPack II +$344");
+    PP = new JCheckBox("Protection Package +$287");
+    Nopak = new JToggleButton("No packages +$0", true);
+    stupidpreventerrorthing = new JButton();
+    Nopak.addActionListener(this);
+    RGBk.addActionListener(this);
+    ASPPII.addActionListener(this);
+    PP.addActionListener(this);
+    stupidpreventerrorthing.addActionListener(this);
 
     JPanel sizes  = new JPanel();
     sizes.setBorder(border);
@@ -83,6 +99,10 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
     cBlack = new JRadioButton("Black");
     cblue = new JRadioButton("Blue", true);
     cRed = new JRadioButton("Platinum Pearl White +$395");
+    
+    cBlack.addActionListener(this);
+    cblue.addActionListener(this);
+    cRed.addActionListener(this);
 
     ButtonGroup co = new ButtonGroup();
     co.add(cBlack);
@@ -111,10 +131,25 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
     img.setIcon(LXBlue);
     img.setOpaque(true);
     
+    pimg = new JLabel();
+    pimg.setIcon(Nopakimg);
+    pimg.setOpaque(true);
+    
+    pimg2 = new JLabel();
+    pimg2.setIcon(Nopakimg);
+    pimg2.setOpaque(true);
+    
+    pimg3 = new JLabel();
+    pimg3.setIcon(Nopakimg);
+    pimg3.setOpaque(true);
+    
     JPanel disp = new JPanel();
     disp.setBorder(border);
     disp.setLayout(new GridLayout(1,2,10,10));
     disp.add(img);
+    disp.add(pimg);
+    disp.add(pimg2);
+    disp.add(pimg3);
     disp.add(display);
     
     JPanel buttons = new JPanel();
@@ -124,8 +159,13 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
     buttons.add(order);
     buttons.add(updateimg);
     
-    
-   
+    JPanel packages  = new JPanel();
+    packages.setBorder(border);
+    packages.setLayout(new GridLayout(3, 1, 10, 10));
+    packages.add(ASPPII);
+    packages.add(RGBk);
+    packages.add(PP);
+    packages.add(Nopak);
     
 
     Box hbox = Box.createHorizontalBox();
@@ -133,6 +173,8 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
     hbox.add(sizes);
     hbox.add(Box.createHorizontalStrut(10));
     hbox.add(toppings);
+    hbox.add(Box.createHorizontalStrut(10));
+    hbox.add(packages);
     hbox.add(Box.createHorizontalStrut(10));
     hbox.add(buttons);
     hbox.add(Box.createHorizontalStrut(10));
@@ -155,14 +197,47 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
   
    public void actionPerformed(ActionEvent e)
    {
-       JButton click = (JButton)e.getSource();
+       JButton click = stupidpreventerrorthing;
+       boolean isc2 = true;
+       try
+       {
+       click = (JButton)e.getSource();
+       } catch(Exception ee)
+            {
+                try
+                {
+                  JToggleButton click2 = (JToggleButton)e.getSource();
+                } catch(Exception eee)
+                {
+                    isc2 = false;
+                    System.err.println("ignore this. also exception: " + eee + "occurred.");
+                }
+                System.err.println("ignore this. also exception: " + ee + "occurred.");
+            }
+       int counter = 0;
        String size = "";
+       String FullOrder = "";
        int sizeprice = 0;
+       String color = "";
        String tops = "";
        int price = 0;
        int topsprice = 0;
+       int fprice1 = 0, fprice2 = 0, fprice3 = 0;
+       boolean bnopak = false;
        top = new ArrayList<>();
        
+       if(Nopak.isSelected())
+        {
+            RGBk.setSelected(false);
+            ASPPII.setSelected(false);
+            PP.setSelected(false);
+            top.clear();
+            bnopak = true;
+        } else if(!Nopak.isSelected())
+        {
+            bnopak = false;
+            isc2 = false;
+        }
        
        if(lx.isSelected())
        {
@@ -185,7 +260,7 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
        
        if(cBlack.isSelected())
        {
-           top.add("Black");
+           color = "Black";
            if(lx.isSelected())
            {
            img.setIcon(LXBlack);
@@ -201,7 +276,7 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
        }
        else if(cblue.isSelected())
        {
-           top.add("Blue");
+           color = "Blue";
            if(lx.isSelected())
            {
            img.setIcon(LXBlue);
@@ -229,17 +304,95 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
            {
                img.setIcon(TWhite);
            }
-          top.add("Platinum Pearl White");
+          color = "Platinum Pearl White";
            price = price+395;
            topsprice = 395;
        }
+      
+        pimg.setIcon(Nopakimg);
+        pimg2.setIcon(Nopakimg);
+        pimg3.setIcon(Nopakimg);
        
-       
+       if(ASPPII.isSelected())
+       {
+           top.add("All-Season ProPack II");
+           pimg.setIcon(ASPP);
+           counter++;
+           price = price+344;
+           fprice1 = 344;
+       }
+       if(PP.isSelected())
+       {
+           top.add("Protection Package");
+           price = price+287;
+           if(counter == 0)
+           {
+               pimg.setIcon(PPimg);
+               fprice1 = 287;
+           } else
+           {
+               pimg2.setIcon(PPimg);
+               fprice2 = 287;
+           }
+        counter++;
+       }
+       if(RGBk.isSelected())
+       {
+           top.add("Red Interior Illumination Kit");
+           price = price+1060;
+           switch (counter) {
+               case 0:
+                   pimg.setIcon(RGBkit);
+                   fprice1 = 1060;
+                   break;
+               case 1:
+                   pimg2.setIcon(RGBkit);
+                   fprice2 = 1060;
+                   break;
+               case 2:
+                   pimg3.setIcon(RGBkit);
+                   fprice3 = 1060;
+                   break;
+               default:
+                   break;
+           }
+       }
        
        for(String t : top)
            tops = tops + t + " ";
        
-       String pizza = "You ordered a " + size + " in " + tops + "for: $" + price;       
+       String pizza = "You ordered a " + size + " in " + color + " with " + tops + "for: $" + price;       
+       
+       FullOrder= size + " $" + sizeprice + "\n" + color + " $" + topsprice + "\n";
+    if(counter>0 || !Nopak.isSelected())   
+    {   
+       for(int r = 0; r <counter; r++)
+       {
+           String f = top.get(r);
+           int currentpakprice = 0;
+           switch (f) {
+               case "All-Season ProPack II":
+                   currentpakprice = fprice1;
+                   break;
+               case "Protection Package":
+                   currentpakprice = 287;
+                   break;
+               case "Red Interior Illumination Kit":
+                   currentpakprice = 1060;
+                   break;
+               default:
+                   break;
+           }
+           FullOrder = FullOrder + f + " $" + currentpakprice + "\n";
+       }
+    } else
+    {
+        tops = "No Packages";
+        pizza = "You ordered a " + size + " in " + color + " with " + tops + " for: $" + price;
+    }
+       
+       FullOrder = FullOrder + "Total: $" + price;
+       
        
        if(click == order)
        {
@@ -250,18 +403,21 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
            JOptionPane.showMessageDialog(CarBuyingProgramTroy.this, pizza);
        } else if(click == updateimg)
        {
-           display.setText(size + " $" + sizeprice + "\n" + tops + " $" + topsprice + "\nTotal: $" + price);
+           display.setText(FullOrder);
            JOptionPane.showMessageDialog(CarBuyingProgramTroy.this, "Image preview Updated");
            
+       } else if(click == stupidpreventerrorthing)
+       {
+           display.setText(FullOrder);
        }
        
-      
+      display.setText(FullOrder);
    }
 
   public static void main(String[] args)
   {
     CarBuyingProgramTroy window = new CarBuyingProgramTroy();
-    window.setBounds(100, 100, 550, 300);
+    window.setBounds(100, 100, 1050, 300);
     window.setDefaultCloseOperation(EXIT_ON_CLOSE);
     window.setResizable(true);
     window.setVisible(true);
