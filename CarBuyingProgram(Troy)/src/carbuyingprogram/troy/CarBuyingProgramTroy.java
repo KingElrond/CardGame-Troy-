@@ -13,7 +13,6 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
-import javax.swing.JTextField;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JCheckBox;
@@ -359,14 +358,14 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
        }
        
        for(String t : top)
-           tops = tops + t + " ";
+           tops = tops + t + ", ";
        
        String OrderDialogBoxText = "You ordered a " + size + " in " + color + " with " + tops + "for: $" + price;       
        
        FullOrder= size + " $" + sizeprice + "\n" + color + " $" + topsprice + "\n";
     if(counter>0 || !Nopak.isSelected())   
     {   
-       for(int r = 0; r <counter; r++)
+       for(int r = 0; r <top.size(); r++)
        {
            String f = top.get(r);
            int currentpakprice = 0;
