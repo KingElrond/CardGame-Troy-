@@ -361,7 +361,7 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
        for(String t : top)
            tops = tops + t + " ";
        
-       String pizza = "You ordered a " + size + " in " + color + " with " + tops + "for: $" + price;       
+       String OrderDialogBoxText = "You ordered a " + size + " in " + color + " with " + tops + "for: $" + price;       
        
        FullOrder= size + " $" + sizeprice + "\n" + color + " $" + topsprice + "\n";
     if(counter>0 || !Nopak.isSelected())   
@@ -388,7 +388,7 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
     } else
     {
         tops = "No Packages";
-        pizza = "You ordered a " + size + " in " + color + " with " + tops + " for: $" + price;
+        OrderDialogBoxText = "You ordered a " + size + " in " + color + " with " + tops + " for: $" + price;
     }
        
        FullOrder = FullOrder + "Total: $" + price;
@@ -398,9 +398,9 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
        {
            if(useDealership.isSelected())
            {
-               pizza = pizza + "\nGo to dealership to pay for and recieve Vehicle.";
+               OrderDialogBoxText = OrderDialogBoxText + "\nGo to dealership to pay for and recieve Vehicle.";
            }
-           JOptionPane.showMessageDialog(CarBuyingProgramTroy.this, pizza);
+           JOptionPane.showMessageDialog(CarBuyingProgramTroy.this, OrderDialogBoxText);
        } else if(click == updateimg)
        {
            display.setText(FullOrder);
