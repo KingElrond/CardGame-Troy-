@@ -42,19 +42,19 @@ public class CarBuyingProgramTroy extends JFrame implements ActionListener
   private ArrayList<String> top;
   private JTextArea display;
   private JLabel img, pimg, pimg2, pimg3;
-  private ImageIcon LXBlue = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\LXBlue.jpeg");
-  private ImageIcon LXWhite = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\LXWhite.jpeg");
-  private ImageIcon LXBlack = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\LXBlack.jpeg");
-  private ImageIcon SportBlack = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\SportBlack.jpeg");
-  private ImageIcon SportBlue = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\SportBlue.jpeg");
-  private ImageIcon SportWhite = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\SportWhite.jpeg");
-  private ImageIcon TBlue = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\TBlue.jpeg");
-  private ImageIcon TWhite = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\Tpwp.jpeg");
-  private ImageIcon TBlack = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\TBlack.jpeg");
-  private ImageIcon RGBkit = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\RGB.jpeg");
-  private ImageIcon ASPP = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\ASPP.jpeg");
-  private ImageIcon PPimg = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\PP.jpeg");
-  private ImageIcon Nopakimg = new ImageIcon("C:\\Users\\troyd\\OneDrive\\Documents\\NetBeansProjects\\CarBuyingProgramGUI-Troy-\\CarBuyingProgram(Troy)\\src\\Nopak.jpeg");
+  private ImageIcon LXBlue = new ImageIcon("LXBlue.jpeg");
+  private ImageIcon LXWhite = new ImageIcon("LXWhite.jpeg");
+  private ImageIcon LXBlack = new ImageIcon("LXBlack.jpeg");
+  private ImageIcon SportBlack = new ImageIcon("SportBlack.jpeg");
+  private ImageIcon SportBlue = new ImageIcon("SportBlue.jpeg");
+  private ImageIcon SportWhite = new ImageIcon("SportWhite.jpeg");
+  private ImageIcon TBlue = new ImageIcon("TBlue.jpeg");
+  private ImageIcon TWhite = new ImageIcon("Tpwp.jpeg");
+  private ImageIcon TBlack = new ImageIcon("TBlack.jpeg");
+  private ImageIcon RGBkit = new ImageIcon("RGB.jpeg");
+  private ImageIcon ASPP = new ImageIcon("ASPP.jpeg");
+  private ImageIcon PPimg = new ImageIcon("PP.jpeg");
+  private ImageIcon Nopakimg = new ImageIcon("Nopak.jpeg");
   
   
   public CarBuyingProgramTroy()
