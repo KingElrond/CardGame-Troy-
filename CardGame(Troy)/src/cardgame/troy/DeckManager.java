@@ -33,14 +33,14 @@ public void shuffleInit()
 private void shuffleDeck()
 {
     boolean isrepeat=false;
-    int randNum = (int) (Math.random() * (52 - 1)) + 1;;
+    int randNum = (int) (Math.random() * (53 - 1)) + 1;;
     for(int i=0; i<unshuffledDeck.size()-1; i++)
     {
         isrepeat=true;
         while(isrepeat)
         {
             boolean stupidBool = false;
-        randNum = (int) (Math.random() * (52 - 1)) + 1;
+        randNum = (int) (Math.random() * (53 - 1)) + 1;
         if(!ShuffledDeck.isEmpty())
         {
         for(int g : ShuffledDeck)
