@@ -34,13 +34,15 @@ private void shuffleDeck()
 {
     boolean isrepeat=false;
     int randNum = (int) (Math.random() * (52 - 1)) + 1;;
-    for(int i=0; i<unshuffledDeck.size(); i++)
+    for(int i=0; i<unshuffledDeck.size()-1; i++)
     {
         isrepeat=true;
         while(isrepeat)
         {
             boolean stupidBool = false;
         randNum = (int) (Math.random() * (52 - 1)) + 1;
+        if(!ShuffledDeck.isEmpty())
+        {
         for(int g : ShuffledDeck)
         {
             if(g==randNum)
@@ -53,6 +55,10 @@ private void shuffleDeck()
                 isrepeat=false;
             }
         }
+        } else
+        {
+         isrepeat=false;
+        }
         }
     ShuffledDeck.add(randNum);
     }
@@ -61,8 +67,8 @@ private void shuffleDeck()
 
 public String drawCard()
 {
-    int cardtypenum=ShuffledDeck.get(1);
-    ShuffledDeck.remove(1);
+    int cardtypenum=ShuffledDeck.get(0);
+    ShuffledDeck.remove(0);
     String cardtoreturn = unshuffledDeck.get(cardtypenum);
   return cardtoreturn;
 }
