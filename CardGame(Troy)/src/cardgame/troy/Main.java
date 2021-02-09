@@ -20,6 +20,11 @@ public class Main {
         dm.shuffleInit();
         
         System.out.println(dm.drawCard());
+        System.out.println(dm.ShuffledDeck);
+        for(int g: dm.ShuffledDeck)
+        {
+        	System.out.println(dm.unshuffledDeck.get(g));
+        }
     }
     
 }
