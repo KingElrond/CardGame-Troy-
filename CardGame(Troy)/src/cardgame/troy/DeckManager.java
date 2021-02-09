@@ -32,6 +32,7 @@ public void shuffleInit()
 
 private void shuffleDeck()
 {
+	ShuffledDeck.clear();
     boolean isrepeat=false;
     int randNum = (int) (Math.random() * (53 - 1)) + 1;;
     for(int i=0; i<unshuffledDeck.size()-1; i++)

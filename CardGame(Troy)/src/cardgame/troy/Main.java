@@ -17,13 +17,16 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         DeckManager dm = new DeckManager();
-        dm.shuffleInit();
         
+        for(int i = 0; i<10; i++)
+        {
+        dm.shuffleInit();
         System.out.println(dm.drawCard());
         System.out.println(dm.ShuffledDeck);
         for(int g: dm.ShuffledDeck)
         {
         	System.out.println(dm.unshuffledDeck.get(g));
+        }
         }
     }
     
