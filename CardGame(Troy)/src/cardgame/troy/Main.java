@@ -28,10 +28,13 @@ tempOrder = new int[5];
         dm.shuffleInit();
         for(int i=0; i<5; i++)
         {
-        hand1[i]=dm.drawCard();
+        	String h = dm.drawCard();
+        hand1[i]=h;
+        h1S[i]=h;
         hand1Num[i]=Integer.valueOf(hand1[i].substring(1));
+        origh1[i]=Integer.valueOf(hand1[i].substring(1));
         }
-        origh1=hand1Num;
+        
         
         for(int g : hand1Num)
         {
@@ -57,25 +60,25 @@ tempOrder = new int[5];
         }
         System.out.println();
         
-        h1S =dm.sortStr(hand1);
+        h1S =dm.sortStr(h1S);
         for(int i =0; i<5; i++)
         {
-        	if(hand1Num[i]==origh1[i])
+        	if(hand1Num[i]==origh1[i] && !dm.containsInt(tempOrder, i))
         	{
         		tempOrder[i]=i;
-        	} else if(hand1Num[i]==origh1[0])
+        	} else if(hand1Num[i]==origh1[0] && !dm.containsInt(tempOrder, 0))
         	{
         		tempOrder[i]=0;
-        	}else if(hand1Num[i]==origh1[1])
+        	}else if(hand1Num[i]==origh1[1] && !dm.containsInt(tempOrder, 1))
         	{
         		tempOrder[i]=1;
-        	}else if(hand1Num[i]==origh1[2])
+        	}else if(hand1Num[i]==origh1[2] && !dm.containsInt(tempOrder, 2))
         	{
         		tempOrder[i]=2;
-        	}else if(hand1Num[i]==origh1[3])
+        	}else if(hand1Num[i]==origh1[3] && !dm.containsInt(tempOrder, 3))
         	{
         		tempOrder[i]=3;
-        	}else if(hand1Num[i]==origh1[4])
+        	}else if(hand1Num[i]==origh1[4] && !dm.containsInt(tempOrder, 4))
         	{
         		tempOrder[i]=4;
         	}
