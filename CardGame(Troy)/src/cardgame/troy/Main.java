@@ -45,6 +45,7 @@ tempOrder = new int[5];
         {
         	System.out.print(g + ",");
         }
+        System.out.println();
         
         SortArray sa = new SortArray(hand1Num);
         hand1Num=sa.sortIt();
