@@ -88,4 +88,27 @@ public String[] switchArr(String[] a, int[] b)
 	
 	return newArr;
 }
+
+public String[] sortStr(String[] a)
+{
+	  int wordAmount=a.length;
+	  String[] wordArray;
+	  wordArray=a;
+	  String temp;
+	  for (int i = 0; i < wordAmount; i++) 
+    {
+        for (int j = i + 1; j < wordAmount; j++) { 
+            if (wordArray[i].compareTo(wordArray[j])>0) 
+            {
+                temp = wordArray[i];
+                wordArray[i] = wordArray[j];
+                wordArray[j] = temp;
+            }
+        }
+    }
+	  
+	return wordArray;
+	  
+}
+
 }

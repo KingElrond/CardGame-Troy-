@@ -33,5 +33,4 @@ public class SortArray
     return nums;
   }
   
-  
 }

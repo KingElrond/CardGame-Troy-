@@ -15,9 +15,10 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-String[] hand1;
+String[] hand1, h1S;
 int[] hand1Num, origh1, tempOrder;
 hand1 = new String[5];
+h1S = new String[5];
 hand1Num = new int[5];
 origh1 = new int[5];
 tempOrder = new int[5];
@@ -29,10 +30,34 @@ tempOrder = new int[5];
         {
         hand1[i]=dm.drawCard();
         hand1Num[i]=Integer.valueOf(hand1[i].substring(1));
-        origh1[i]=hand1Num[i];
         }
+        origh1=hand1Num;
+        
+        for(int g : hand1Num)
+        {
+        	System.out.print(g + ",");
+        }
+        System.out.println();
+        for(int g : origh1)
+        {
+        	System.out.print(g + ",");
+        }
+        
         SortArray sa = new SortArray(hand1Num);
         hand1Num=sa.sortIt();
+        
+        for(int g : hand1Num)
+        {
+        	System.out.print(g + ",");
+        }
+        System.out.println();
+        for(int g : origh1)
+        {
+        	System.out.print(g + ",");
+        }
+        System.out.println();
+        
+        h1S =dm.sortStr(hand1);
         for(int i =0; i<5; i++)
         {
         	if(hand1Num[i]==origh1[i])
@@ -55,7 +80,29 @@ tempOrder = new int[5];
         		tempOrder[i]=4;
         	}
         }
+        
+        for(int g : hand1Num)
+        {
+        	System.out.print(g + ",");
+        }
+        System.out.println();
+        for(int g : origh1)
+        {
+        	System.out.print(g + ",");
+        }
+        System.out.println();
+        for(int g : tempOrder)
+        {
+        	System.out.print(g + ",");
+        }
+        System.out.println();
+        
         for(String card : hand1)
+        {
+        	System.out.println(card);
+        }
+        System.out.println("Sorted by suite");
+        for(String card : h1S)
         {
         	System.out.println(card);
         }
