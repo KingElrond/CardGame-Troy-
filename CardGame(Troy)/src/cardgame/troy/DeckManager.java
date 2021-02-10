@@ -75,4 +75,17 @@ public String drawCard()
   return cardtoreturn;
 }
     
+
+public String[] switchArr(String[] a, int[] b)
+{
+	String[] newArr;
+	newArr = new String[5];
+	for(int i=0;i<5;i++)
+	{
+		int g = b[i];
+		newArr[i] = a[g];
+	}
+	
+	return newArr;
+}
 }
