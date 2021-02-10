@@ -18,10 +18,11 @@ public ArrayList<Integer> ShuffledDeck = new ArrayList();
 public ArrayList<Integer> calledCards = new ArrayList();
 public DeckManager()
  {
-        unshuffledDeck = new ArrayList<>(Arrays.asList("","Ace of Spades","10 of Spades","9 of Spades","8 of Spades","7 of Spades","6 of Spades","5 of Spades","4 of Spades","3 of Spades","2 of Spades","King of Spades","Queen of Spades","Jack of Spades",""
-                + "Ace of Hearts","King of Hearts","Queen of Hearts","Jack of Hearts","10 of Hearts","9 of Hearts","8 of Hearts","7 of Hearts","6 of Hearts","5 of Hearts","4 of Hearts","3 of Hearts","2 of Hearts",""
-                        + "Ace of Diamonds","Queen of Diamonds","King of Diamonds","Jack of Diamonds","10 of Diamonds","9 of Diamonds","8 of Diamonds","7 of Diamonds","6 of Diamonds","5 of Diamonds","4 of Diamonds","3 of Diamonds","2 of Diamonds",""
-                                + "King of Clubs","jack of Clubs","queen of Clubs","10 of Clubs","9 of Clubs","8 of Clubs","7 of Clubs","6 of Clubs","5 of Clubs","4 of Clubs","3 of Clubs","2 of Clubs","Ace of Clubs"));
+        unshuffledDeck = new ArrayList<>(Arrays.asList(""
+        		,"S1","S10","S9","S8","S7","S6","S5","S4","S3","S2","S13","S12","S11",""
+                + "H1","H10","H9","H8","H7","H6","H5","H4","H3","H2","H13","H12","H11",""
+                        + "D1","D10","D9","D8","D7","D6","D5","D4","D3","D2","D13","D12","D11",""
+                                + "C1","C10","C9","C8","C7","C6","C5","C4","C3","C2","C13","C12","C11"));
         
      
  }

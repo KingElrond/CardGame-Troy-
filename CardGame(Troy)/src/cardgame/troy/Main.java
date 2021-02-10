@@ -16,7 +16,9 @@ public class Main {
      */
     public static void main(String[] args) {
 String[] hand1;
+int[] hand1Num;
 hand1 = new String[5];
+hand1Num = new int[5];
         // TODO code application logic here
         DeckManager dm = new DeckManager();
         
