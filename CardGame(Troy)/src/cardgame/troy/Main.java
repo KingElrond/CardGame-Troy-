@@ -15,20 +15,24 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-String[] hand1, h1S, p2hand, p3hand, h2S, h3S;
-int[] hand1Num, origh1, tempOrder, origh2, origh3, hand2Num, hand3Num;
+String[] hand1, h1S, p2hand, p3hand, p4hand, h2S, h3S,h4S;
+int[] hand1Num, origh1, tempOrder, origh2, origh3, hand2Num, hand3Num, hand4Num, origh4;
 hand1 = new String[5];
 p2hand = new String[5];
 p3hand = new String[5];
+p4hand = new String[5];
 h1S = new String[5];
 h2S = new String[5];
 h3S = new String[5];
+h4S = new String[5];
 hand1Num = new int[5];
 hand2Num = new int[5];
 hand3Num = new int[5];
+hand4Num = new int[5];
 origh1 = new int[5];
 origh2 = new int[5];
 origh3 = new int[5];
+origh4 = new int[5];
 tempOrder = new int[5];
         // TODO code application logic here
         DeckManager dm = new DeckManager();
@@ -41,25 +45,27 @@ tempOrder = new int[5];
         h1S[i]=h;
         hand1Num[i]=Integer.valueOf(hand1[i].substring(1));
         origh1[i]=Integer.valueOf(hand1[i].substring(1));
-        }
         
-        for(int i=0; i<5; i++)
-        {
-        String h = dm.drawCard();
+        h = dm.drawCard();
         p2hand[i]=h;
         h2S[i]=h;
         hand2Num[i]=Integer.valueOf(p2hand[i].substring(1));
         origh2[i]=Integer.valueOf(p2hand[i].substring(1));
-        }
         
-        for(int i=0; i<5; i++)
-        {
-        String h = dm.drawCard();
+        h = dm.drawCard();
         p3hand[i]=h;
         h3S[i]=h;
         hand3Num[i]=Integer.valueOf(p3hand[i].substring(1));
         origh3[i]=Integer.valueOf(p3hand[i].substring(1));
+        
+        h = dm.drawCard();
+        p4hand[i]=h;
+        h4S[i]=h;
+        hand4Num[i]=Integer.valueOf(p4hand[i].substring(1));
+        origh4[i]=Integer.valueOf(p4hand[i].substring(1));
+
         }
+        
         
         for(int g : hand1Num)
         {
@@ -81,6 +87,10 @@ tempOrder = new int[5];
         SortArray saaaa = new SortArray(hand3Num);
         hand3Num=saaaa.sortIt();
         
+        SortArray saaaaa = new SortArray(hand4Num);
+        hand4Num=saaaaa.sortIt();
+        
+        
         for(int g : hand1Num)
         {
         	System.out.print(g + ",");
@@ -95,6 +105,8 @@ tempOrder = new int[5];
         h1S =dm.sortStr(h1S);
         h2S =dm.sortStr(h2S);
         h3S =dm.sortStr(h3S);
+        h4S =dm.sortStr(h4S);
+        
         
         for(int i =0; i<5; i++)
         {
@@ -139,7 +151,7 @@ tempOrder = new int[5];
         {
         	System.out.print(card + ",");
         }
-        System.out.println("\n\nSorted by suite");
+        System.out.println("\n\nSorted by suit");
         for(String card : h1S)
         {
         	System.out.print(card + ",");
@@ -180,7 +192,7 @@ tempOrder = new int[5];
         {
         	System.out.print(card + ",");
         }
-        System.out.println("\n\nSorted by suite");
+        System.out.println("\n\nSorted by suit");
         for(String card : h2S)
         {
         	System.out.print(card + ",");
@@ -222,7 +234,7 @@ tempOrder = new int[5];
         {
         	System.out.print(card + ",");
         }
-        System.out.println("\n\nSorted by suite");
+        System.out.println("\n\nSorted by suit");
         for(String card : h3S)
         {
         	System.out.print(card + ",");
@@ -230,6 +242,48 @@ tempOrder = new int[5];
         p3hand=dm.switchArr(p3hand, tempOrder);
         System.out.println("\n\nSorted by number");
         for(String card : p3hand)
+        {
+        	System.out.print(card + ",");
+        }
+        
+        
+        tempOrder = new int[5];
+        for(int i =0; i<5; i++)
+        {
+        	if(hand4Num[i]==origh4[i] && !dm.containsInt(tempOrder, i))
+        	{
+        		tempOrder[i]=i;
+        	} else if(hand4Num[i]==origh4[0] && !dm.containsInt(tempOrder, 0))
+        	{
+        		tempOrder[i]=0;
+        	}else if(hand4Num[i]==origh4[1] && !dm.containsInt(tempOrder, 1))
+        	{
+        		tempOrder[i]=1;
+        	}else if(hand4Num[i]==origh4[2] && !dm.containsInt(tempOrder, 2))
+        	{
+        		tempOrder[i]=2;
+        	}else if(hand4Num[i]==origh4[3] && !dm.containsInt(tempOrder, 3))
+        	{
+        		tempOrder[i]=3;
+        	}else if(hand4Num[i]==origh4[4] && !dm.containsInt(tempOrder, 4))
+        	{
+        		tempOrder[i]=4;
+        	}
+        }
+        
+        System.out.println("\n\n\nPlayer 4 Original Hand");
+        for(String card : p4hand)
+        {
+        	System.out.print(card + ",");
+        }
+        System.out.println("\n\nSorted by suit");
+        for(String card : h4S)
+        {
+        	System.out.print(card + ",");
+        }
+        p4hand=dm.switchArr(p4hand, tempOrder);
+        System.out.println("\n\nSorted by number");
+        for(String card : p4hand)
         {
         	System.out.print(card + ",");
         }
