@@ -137,18 +137,18 @@ tempOrder = new int[5];
         System.out.println("\n\nOriginal Hand");
         for(String card : hand1)
         {
-        	System.out.println(card);
+        	System.out.print(card + ",");
         }
-        System.out.println("Sorted by suite");
+        System.out.println("\n\nSorted by suite");
         for(String card : h1S)
         {
-        	System.out.println(card);
+        	System.out.print(card + ",");
         }
         hand1=dm.switchArr(hand1, tempOrder);
-        System.out.println("Sorted by number hand");
+        System.out.println("\n\nSorted by number hand");
         for(String card : hand1)
         {
-        	System.out.println(card);
+        	System.out.print(card + ",");
         }
         
         tempOrder = new int[5];
@@ -175,21 +175,21 @@ tempOrder = new int[5];
         	}
         }
         
-        System.out.println("\n\nPlayer 2 Original Hand");
+        System.out.println("\n\n\nPlayer 2 Original Hand");
         for(String card : p2hand)
         {
-        	System.out.println(card);
+        	System.out.print(card + ",");
         }
-        System.out.println("Sorted by suite");
+        System.out.println("\n\nSorted by suite");
         for(String card : h2S)
         {
-        	System.out.println(card);
+        	System.out.print(card + ",");
         }
         p2hand=dm.switchArr(p2hand, tempOrder);
-        System.out.println("Sorted by number");
+        System.out.println("\n\nSorted by number");
         for(String card : p2hand)
         {
-        	System.out.println(card);
+        	System.out.print(card + ",");
         }
         
         
@@ -217,23 +217,23 @@ tempOrder = new int[5];
         	}
         }
         
-        System.out.println("\n\nPlayer 3 Original Hand");
+        System.out.println("\n\n\nPlayer 3 Original Hand");
         for(String card : p3hand)
         {
-        	System.out.println(card);
+        	System.out.print(card + ",");
         }
-        System.out.println("Sorted by suite");
+        System.out.println("\n\nSorted by suite");
         for(String card : h3S)
         {
-        	System.out.println(card);
+        	System.out.print(card + ",");
         }
         p3hand=dm.switchArr(p3hand, tempOrder);
-        System.out.println("Sorted by number");
+        System.out.println("\n\nSorted by number");
         for(String card : p3hand)
         {
-        	System.out.println(card);
+        	System.out.print(card + ",");
         }
-        
+        System.out.println();
         
         /*
         System.out.println(dm.drawCard());
