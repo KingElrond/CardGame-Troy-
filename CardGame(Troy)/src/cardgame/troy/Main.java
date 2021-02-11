@@ -100,7 +100,7 @@ tempOrder = new int[5];
         	System.out.print(g + ",");
         }
         System.out.println();
-        
+        System.out.println("\n\nOriginal Hand");
         for(String card : hand1)
         {
         	System.out.println(card);
