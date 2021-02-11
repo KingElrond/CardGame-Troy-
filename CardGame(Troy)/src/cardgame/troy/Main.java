@@ -15,12 +15,20 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-String[] hand1, h1S;
-int[] hand1Num, origh1, tempOrder;
+String[] hand1, h1S, p2hand, p3hand, h2S, h3S;
+int[] hand1Num, origh1, tempOrder, origh2, origh3, hand2Num, hand3Num;
 hand1 = new String[5];
+p2hand = new String[5];
+p3hand = new String[5];
 h1S = new String[5];
+h2S = new String[5];
+h3S = new String[5];
 hand1Num = new int[5];
+hand2Num = new int[5];
+hand3Num = new int[5];
 origh1 = new int[5];
+origh2 = new int[5];
+origh3 = new int[5];
 tempOrder = new int[5];
         // TODO code application logic here
         DeckManager dm = new DeckManager();
@@ -28,13 +36,30 @@ tempOrder = new int[5];
         dm.shuffleInit();
         for(int i=0; i<5; i++)
         {
-        	String h = dm.drawCard();
+        String h = dm.drawCard();
         hand1[i]=h;
         h1S[i]=h;
         hand1Num[i]=Integer.valueOf(hand1[i].substring(1));
         origh1[i]=Integer.valueOf(hand1[i].substring(1));
         }
         
+        for(int i=0; i<5; i++)
+        {
+        String h = dm.drawCard();
+        p2hand[i]=h;
+        h2S[i]=h;
+        hand2Num[i]=Integer.valueOf(p2hand[i].substring(1));
+        origh2[i]=Integer.valueOf(p2hand[i].substring(1));
+        }
+        
+        for(int i=0; i<5; i++)
+        {
+        String h = dm.drawCard();
+        p3hand[i]=h;
+        h3S[i]=h;
+        hand3Num[i]=Integer.valueOf(p3hand[i].substring(1));
+        origh3[i]=Integer.valueOf(p3hand[i].substring(1));
+        }
         
         for(int g : hand1Num)
         {
@@ -50,6 +75,12 @@ tempOrder = new int[5];
         SortArray sa = new SortArray(hand1Num);
         hand1Num=sa.sortIt();
         
+        SortArray saa = new SortArray(hand2Num);
+        hand2Num=saa.sortIt();
+        
+        SortArray saaaa = new SortArray(hand3Num);
+        hand3Num=saaaa.sortIt();
+        
         for(int g : hand1Num)
         {
         	System.out.print(g + ",");
@@ -62,6 +93,9 @@ tempOrder = new int[5];
         System.out.println();
         
         h1S =dm.sortStr(h1S);
+        h2S =dm.sortStr(h2S);
+        h3S =dm.sortStr(h3S);
+        
         for(int i =0; i<5; i++)
         {
         	if(hand1Num[i]==origh1[i] && !dm.containsInt(tempOrder, i))
