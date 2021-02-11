@@ -150,6 +150,91 @@ tempOrder = new int[5];
         {
         	System.out.println(card);
         }
+        
+        tempOrder = new int[5];
+        for(int i =0; i<5; i++)
+        {
+        	if(hand2Num[i]==origh2[i] && !dm.containsInt(tempOrder, i))
+        	{
+        		tempOrder[i]=i;
+        	} else if(hand2Num[i]==origh2[0] && !dm.containsInt(tempOrder, 0))
+        	{
+        		tempOrder[i]=0;
+        	}else if(hand2Num[i]==origh2[1] && !dm.containsInt(tempOrder, 1))
+        	{
+        		tempOrder[i]=1;
+        	}else if(hand2Num[i]==origh2[2] && !dm.containsInt(tempOrder, 2))
+        	{
+        		tempOrder[i]=2;
+        	}else if(hand2Num[i]==origh2[3] && !dm.containsInt(tempOrder, 3))
+        	{
+        		tempOrder[i]=3;
+        	}else if(hand2Num[i]==origh2[4] && !dm.containsInt(tempOrder, 4))
+        	{
+        		tempOrder[i]=4;
+        	}
+        }
+        
+        System.out.println("\n\nPlayer 2 Original Hand");
+        for(String card : p2hand)
+        {
+        	System.out.println(card);
+        }
+        System.out.println("Sorted by suite");
+        for(String card : h2S)
+        {
+        	System.out.println(card);
+        }
+        p2hand=dm.switchArr(p2hand, tempOrder);
+        System.out.println("Sorted by number");
+        for(String card : p2hand)
+        {
+        	System.out.println(card);
+        }
+        
+        
+        tempOrder = new int[5];
+        for(int i =0; i<5; i++)
+        {
+        	if(hand3Num[i]==origh3[i] && !dm.containsInt(tempOrder, i))
+        	{
+        		tempOrder[i]=i;
+        	} else if(hand3Num[i]==origh3[0] && !dm.containsInt(tempOrder, 0))
+        	{
+        		tempOrder[i]=0;
+        	}else if(hand3Num[i]==origh3[1] && !dm.containsInt(tempOrder, 1))
+        	{
+        		tempOrder[i]=1;
+        	}else if(hand3Num[i]==origh3[2] && !dm.containsInt(tempOrder, 2))
+        	{
+        		tempOrder[i]=2;
+        	}else if(hand3Num[i]==origh3[3] && !dm.containsInt(tempOrder, 3))
+        	{
+        		tempOrder[i]=3;
+        	}else if(hand3Num[i]==origh3[4] && !dm.containsInt(tempOrder, 4))
+        	{
+        		tempOrder[i]=4;
+        	}
+        }
+        
+        System.out.println("\n\nPlayer 3 Original Hand");
+        for(String card : p3hand)
+        {
+        	System.out.println(card);
+        }
+        System.out.println("Sorted by suite");
+        for(String card : h3S)
+        {
+        	System.out.println(card);
+        }
+        p3hand=dm.switchArr(p3hand, tempOrder);
+        System.out.println("Sorted by number");
+        for(String card : p3hand)
+        {
+        	System.out.println(card);
+        }
+        
+        
         /*
         System.out.println(dm.drawCard());
         System.out.println(dm.ShuffledDeck);
