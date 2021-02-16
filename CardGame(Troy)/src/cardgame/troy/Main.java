@@ -359,16 +359,7 @@ tempOrder = new int[5];
         System.out.println(isfs2);
         System.out.println(isfs3);
         System.out.println(isfs4);
-        if(isf1 || isf2 || isf3 || isf4)
-        {
-        	if(isS1 || isS2 || isS3 || isS4)
-            {
-        		if(isfs1 || isfs2 || isfs3 || isfs4)
-                {
-        			flushexist=true;
-                }
-            }
-        }
+        
         if(isfs1 || isfs2 || isfs3 || isfs4)
         {
 			flushexist=true;
