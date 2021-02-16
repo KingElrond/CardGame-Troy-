@@ -16,7 +16,7 @@ public class Main {
      */
     public static void main(String[] args) {
     	boolean flushexist = false;
-    	while(flushexist)
+    	while(!flushexist)
     	{
 String[] hand1, h1S, p2hand, p3hand, p4hand, h2S, h3S,h4S,h1d,h2d,h3d,h4d;
 int[] hand1Num, origh1, tempOrder, origh2, origh3, hand2Num, hand3Num, hand4Num, origh4;
@@ -187,12 +187,15 @@ tempOrder = new int[5];
         
         eh.checkFlush(h1d);
         isf1=eh.returnflush();
-        eh.checkFlush(h2d);
-        isf2=eh.returnflush();
-        eh.checkFlush(h3d);
-        isf3=eh.returnflush();
-        eh.checkFlush(h4d);
-        isf4=eh.returnflush();
+        EvaluateHand eh2 = new EvaluateHand();
+        eh2.checkFlush(h2d);
+        isf2=eh2.returnflush();
+        EvaluateHand eh3 = new EvaluateHand();
+        eh3.checkFlush(h3d);
+        isf3=eh3.returnflush();
+        EvaluateHand eh4 = new EvaluateHand();
+        eh4.checkFlush(h4d);
+        isf4=eh4.returnflush();
         
         System.out.println();
         tempOrder = new int[5];
