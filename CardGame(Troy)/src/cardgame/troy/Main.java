@@ -15,8 +15,12 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-String[] hand1, h1S, p2hand, p3hand, p4hand, h2S, h3S,h4S;
+    	boolean flushexist = false;
+    	while(flushexist)
+    	{
+String[] hand1, h1S, p2hand, p3hand, p4hand, h2S, h3S,h4S,h1d,h2d,h3d,h4d;
 int[] hand1Num, origh1, tempOrder, origh2, origh3, hand2Num, hand3Num, hand4Num, origh4;
+boolean isf1,isf2,isf3,isf4;
 hand1 = new String[5];
 p2hand = new String[5];
 p3hand = new String[5];
@@ -25,6 +29,10 @@ h1S = new String[5];
 h2S = new String[5];
 h3S = new String[5];
 h4S = new String[5];
+h1d = new String[5];
+h2d = new String[5];
+h3d = new String[5];
+h4d = new String[5];
 hand1Num = new int[5];
 hand2Num = new int[5];
 hand3Num = new int[5];
@@ -36,6 +44,8 @@ origh4 = new int[5];
 tempOrder = new int[5];
         // TODO code application logic here
         DeckManager dm = new DeckManager();
+        EvaluateHand eh = new EvaluateHand();
+        
         
         dm.shuffleInit();
         for(int i=0; i<5; i++)
@@ -46,11 +56,13 @@ tempOrder = new int[5];
         hand1Num[i]=Integer.valueOf(hand1[i].substring(1));
         origh1[i]=Integer.valueOf(hand1[i].substring(1));
         
+        
         h = dm.drawCard();
         p2hand[i]=h;
         h2S[i]=h;
         hand2Num[i]=Integer.valueOf(p2hand[i].substring(1));
         origh2[i]=Integer.valueOf(p2hand[i].substring(1));
+        
         
         h = dm.drawCard();
         p3hand[i]=h;
@@ -58,12 +70,14 @@ tempOrder = new int[5];
         hand3Num[i]=Integer.valueOf(p3hand[i].substring(1));
         origh3[i]=Integer.valueOf(p3hand[i].substring(1));
         
+        
         h = dm.drawCard();
         p4hand[i]=h;
         h4S[i]=h;
         hand4Num[i]=Integer.valueOf(p4hand[i].substring(1));
         origh4[i]=Integer.valueOf(p4hand[i].substring(1));
 
+        
         }
         
         
@@ -163,6 +177,24 @@ tempOrder = new int[5];
         	System.out.print(card + ",");
         }
         
+        for(int i=0; i<5; i++)
+        {
+        	h1d[i]=h1S[i].substring(0,1);
+        	h2d[i]=h2S[i].substring(0,1);
+        	h3d[i]=h3S[i].substring(0,1);
+        	h4d[i]=h4S[i].substring(0,1);
+        }
+        
+        eh.checkFlush(h1d);
+        isf1=eh.returnflush();
+        eh.checkFlush(h2d);
+        isf2=eh.returnflush();
+        eh.checkFlush(h3d);
+        isf3=eh.returnflush();
+        eh.checkFlush(h4d);
+        isf4=eh.returnflush();
+        
+        System.out.println();
         tempOrder = new int[5];
         for(int i =0; i<5; i++)
         {
@@ -289,6 +321,15 @@ tempOrder = new int[5];
         }
         System.out.println();
         
+        System.out.print(isf1);
+        System.out.print(isf2);
+        System.out.print(isf3);
+        System.out.print(isf4);
+        if(isf1 || isf2 || isf3 || isf4)
+        {
+        	flushexist=true;
+        }
+        System.out.println();
         /*
         System.out.println(dm.drawCard());
         System.out.println(dm.ShuffledDeck);
@@ -297,6 +338,7 @@ tempOrder = new int[5];
         	System.out.println(dm.unshuffledDeck.get(g));
         }
         */
+    	}
     }
     
 }
