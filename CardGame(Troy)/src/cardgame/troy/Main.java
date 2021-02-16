@@ -5,6 +5,8 @@
  */
 package cardgame.troy;
 
+import java.util.Arrays;
+
 /**
  *
  * @author troyd
@@ -20,7 +22,7 @@ public class Main {
     	{
 String[] hand1, h1S, p2hand, p3hand, p4hand, h2S, h3S,h4S,h1d,h2d,h3d,h4d;
 int[] hand1Num, origh1, tempOrder, origh2, origh3, hand2Num, hand3Num, hand4Num, origh4;
-boolean isf1,isf2,isf3,isf4;
+boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4;
 hand1 = new String[5];
 p2hand = new String[5];
 p3hand = new String[5];
@@ -185,17 +187,38 @@ tempOrder = new int[5];
         	h4d[i]=h4S[i].substring(0,1);
         }
         
+        
         eh.checkFlush(h1d);
         isf1=eh.returnflush();
+        eh.checkStraight(hand1Num);
+        isS1=eh.retStraight();
+        eh.straightFlush();
+        isfs1=eh.retisboth();
+        
         EvaluateHand eh2 = new EvaluateHand();
         eh2.checkFlush(h2d);
         isf2=eh2.returnflush();
+        eh2.checkStraight(hand2Num);
+        isS2=eh2.retStraight();
+        eh2.straightFlush();
+        isfs2=eh2.retisboth();
+        
         EvaluateHand eh3 = new EvaluateHand();
         eh3.checkFlush(h3d);
         isf3=eh3.returnflush();
+        eh3.checkStraight(hand3Num);
+        isS3=eh3.retStraight();
+        eh3.straightFlush();
+        isfs3=eh3.retisboth();
+        
         EvaluateHand eh4 = new EvaluateHand();
         eh4.checkFlush(h4d);
         isf4=eh4.returnflush();
+        eh4.checkStraight(hand4Num);
+        isS4=eh4.retStraight();
+        eh4.straightFlush();
+        isfs4=eh4.retisboth();
+        
         
         System.out.println();
         tempOrder = new int[5];
@@ -324,13 +347,31 @@ tempOrder = new int[5];
         }
         System.out.println();
         
-        System.out.print(isf1);
-        System.out.print(isf2);
-        System.out.print(isf3);
-        System.out.print(isf4);
+        System.out.println(isf1);
+        System.out.println(isf2);
+        System.out.println(isf3);
+        System.out.println(isf4);
+        System.out.println(isS1);
+        System.out.println(isS2);
+        System.out.println(isS3);
+        System.out.println(isS4);
+        System.out.println(isfs1);
+        System.out.println(isfs2);
+        System.out.println(isfs3);
+        System.out.println(isfs4);
         if(isf1 || isf2 || isf3 || isf4)
         {
-        	flushexist=true;
+        	if(isS1 || isS2 || isS3 || isS4)
+            {
+        		if(isfs1 || isfs2 || isfs3 || isfs4)
+                {
+        			flushexist=true;
+                }
+            }
+        }
+        if(isfs1 || isfs2 || isfs3 || isfs4)
+        {
+			flushexist=true;
         }
         System.out.println();
         /*
