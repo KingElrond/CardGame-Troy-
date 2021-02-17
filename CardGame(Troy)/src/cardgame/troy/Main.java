@@ -17,6 +17,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+    	int runsthruprogram = 0;
     	boolean flushexist = false;
     	while(!flushexist)
     	{
@@ -186,6 +187,21 @@ tempOrder = new int[5];
         	h3d[i]=h3S[i].substring(0,1);
         	h4d[i]=h4S[i].substring(0,1);
         }
+        
+        
+        /* for checking if it detects
+        h1d[0]="D";
+        h1d[1]="D";
+        h1d[2]="D";
+        h1d[3]="D";
+        h1d[4]="D";
+        
+        hand1Num[0]=1;
+        hand1Num[1]=2;
+        hand1Num[2]=3;
+        hand1Num[3]=4;
+        hand1Num[4]=5;
+        */
         
         
         eh.checkFlush(h1d);
@@ -360,10 +376,24 @@ tempOrder = new int[5];
         System.out.println(isfs3);
         System.out.println(isfs4);
         
+        //this checks for straightflush and only ends program when 1 is found
         if(isfs1 || isfs2 || isfs3 || isfs4)
         {
-			flushexist=true;
+        	flushexist=true;
         }
+        
+        
+        /* for benchmarking your pc. this checks if there are 2 straightflushes. the chance of this occurring is 0.00000000023687585
+        if(isfs1 && isfs2 || isfs1 && isfs3 || isfs1 && isfs4 || isfs2 && isfs3 || isfs2 && isfs4 || isfs3 && isfs4)
+        {
+			flushexist=true;
+            
+        }
+        System.out.println();
+        */
+        
+        runsthruprogram++;
+        System.out.println(runsthruprogram);
         System.out.println();
         /*
         System.out.println(dm.drawCard());
