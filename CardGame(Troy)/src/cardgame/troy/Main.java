@@ -22,8 +22,8 @@ public class Main {
     	while(!flushexist)
     	{
 String[] hand1, h1S, p2hand, p3hand, p4hand, h2S, h3S,h4S,h1d,h2d,h3d,h4d;
-int[] hand1Num, origh1, tempOrder, origh2, origh3, hand2Num, hand3Num, hand4Num, origh4;
-boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4;
+int[] hand1Num, origh1, tempOrder, origh2, origh3, hand2Num, hand3Num, hand4Num, origh4, counter1,counter2,counter3,counter4;
+boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,is3k1=false,is3k2=false,is3k3=false,is3k4=false,is4k1=false,is4k2=false,is4k3=false,is4k4=false,is5k1=false,is5k2=false,is5k3=false,is5k4=false;
 hand1 = new String[5];
 p2hand = new String[5];
 p3hand = new String[5];
@@ -210,6 +210,8 @@ tempOrder = new int[5];
         isS1=eh.retStraight();
         eh.straightFlush();
         isfs1=eh.retisboth();
+        eh.check4ofkind(hand1Num);
+        counter1=eh.getcounter();
         
         EvaluateHand eh2 = new EvaluateHand();
         eh2.checkFlush(h2d);
@@ -218,6 +220,8 @@ tempOrder = new int[5];
         isS2=eh2.retStraight();
         eh2.straightFlush();
         isfs2=eh2.retisboth();
+        eh2.check4ofkind(hand2Num);
+        counter2=eh2.getcounter();
         
         EvaluateHand eh3 = new EvaluateHand();
         eh3.checkFlush(h3d);
@@ -226,6 +230,8 @@ tempOrder = new int[5];
         isS3=eh3.retStraight();
         eh3.straightFlush();
         isfs3=eh3.retisboth();
+        eh3.check4ofkind(hand3Num);
+        counter3=eh3.getcounter();
         
         EvaluateHand eh4 = new EvaluateHand();
         eh4.checkFlush(h4d);
@@ -234,6 +240,68 @@ tempOrder = new int[5];
         isS4=eh4.retStraight();
         eh4.straightFlush();
         isfs4=eh4.retisboth();
+        eh4.check4ofkind(hand4Num);
+        counter4=eh4.getcounter();
+        
+        for(int i=0; i<5; i++)
+        {
+        	if(counter1[i]==3)
+        	{
+        		is3k1=true;
+        	}
+        	if(counter2[i]==3)
+        	{
+        		is3k2=true;
+        	}
+        	if(counter3[i]==3)
+        	{
+        		is3k3=true;
+        	}
+        	if(counter4[i]==3)
+        	{
+        		is3k4=true;
+        	}
+        	
+        	//checks for 4 of kind
+        	
+        	if(counter1[i]==4)
+        	{
+        		is4k1=true;
+        	}
+        	if(counter2[i]==4)
+        	{
+        		is4k2=true;
+        	}
+        	if(counter3[i]==4)
+        	{
+        		is4k3=true;
+        	}
+        	if(counter4[i]==4)
+        	{
+        		is4k4=true;
+        	}
+        	
+        	//checks for 5 of kind
+        	
+        	if(counter1[i]==5)
+        	{
+        		is5k1=true;
+        	}
+        	if(counter2[i]==5)
+        	{
+        		is5k2=true;
+        	}
+        	if(counter3[i]==5)
+        	{
+        		is5k3=true;
+        	}
+        	if(counter4[i]==5)
+        	{
+        		is5k4=true;
+        	}
+        }
+        
+        
         
         
         System.out.println();
@@ -363,21 +431,64 @@ tempOrder = new int[5];
         }
         System.out.println();
         
+        System.out.println("Flush");
         System.out.println(isf1);
         System.out.println(isf2);
         System.out.println(isf3);
         System.out.println(isf4);
+        System.out.println("Straight");
         System.out.println(isS1);
         System.out.println(isS2);
         System.out.println(isS3);
         System.out.println(isS4);
+        System.out.println("Straight Flush");
         System.out.println(isfs1);
         System.out.println(isfs2);
         System.out.println(isfs3);
         System.out.println(isfs4);
+        System.out.println("3 of a kinds");
+        System.out.println(is3k1);
+        System.out.println(is3k2);
+        System.out.println(is3k3);
+        System.out.println(is3k4);
+        System.out.println("4 of a kinds");
+        System.out.println(is4k1);
+        System.out.println(is4k2);
+        System.out.println(is4k3);
+        System.out.println(is4k4);
+        System.out.println("5 of a kinds");
+        System.out.println(is5k1);
+        System.out.println(is5k2);
+        System.out.println(is5k3);
+        System.out.println(is5k4);
+        
         
         //this checks for straightflush and only ends program when 1 is found
+        /*
         if(isfs1 || isfs2 || isfs3 || isfs4)
+        {
+        	flushexist=true;
+        }
+        if(isf1 || isf2 || isf3 || isf4)
+        {
+        	flushexist=true;
+        }
+        if(isS1 || isS2 || isS3 || isS4)
+        {
+        	flushexist=true;
+        }
+        */
+        if(is3k1 || is3k2 || is3k3 || is3k4)
+        {
+        	flushexist=true;
+        }
+        
+        if(is4k1 || is4k2 || is4k3 || is4k4)
+        {
+        	flushexist=true;
+        }
+        
+        if(is5k1 || is5k2 || is5k3 || is5k4)
         {
         	flushexist=true;
         }

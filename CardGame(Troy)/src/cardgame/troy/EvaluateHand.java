@@ -1,7 +1,7 @@
 package cardgame.troy;
 
 public class EvaluateHand {
-public int counter=0;
+public int[] counter = new int[5];
 public boolean isflush, isStraight, isBoth;
 
 
@@ -111,4 +111,36 @@ public boolean isflush, isStraight, isBoth;
 		return isBoth;
 		
 	}
+	
+	public void check4ofkind(int[] list)
+	{
+		
+		for(int i = 0; i<5; i++)
+		{
+			for(int g = 0; g<5; g++)
+			{
+				if(g==i)
+				{
+					if(i!=4)
+					{
+					g++;
+					} else
+					{
+						break;
+					}
+				}
+				if(list[i]==list[g])
+				{
+					counter[i]++;
+				}
+			}
+		}
+	}
+	
+	public int[] getcounter()
+	{
+		return counter;
+	}
+	
+	
 }

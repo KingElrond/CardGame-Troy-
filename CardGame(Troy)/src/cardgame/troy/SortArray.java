@@ -18,7 +18,7 @@ public class SortArray
       
       for(int c2 = c1 + 1; c2 < nums.length; c2++)
       {
-        System.out.println("In sort: " + nums[c1] + " " + nums[c2]);
+        
         if(nums[c1] > nums[c2])
         {
           temp = nums[c1];
