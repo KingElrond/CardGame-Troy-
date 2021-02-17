@@ -477,7 +477,7 @@ tempOrder = new int[5];
         {
         	flushexist=true;
         }
-        */
+        
         if(is3k1 || is3k2 || is3k3 || is3k4)
         {
         	flushexist=true;
@@ -487,7 +487,7 @@ tempOrder = new int[5];
         {
         	flushexist=true;
         }
-        
+        */
         if(is5k1 || is5k2 || is5k3 || is5k4)
         {
         	flushexist=true;

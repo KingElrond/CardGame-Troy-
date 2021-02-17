@@ -114,9 +114,11 @@ public boolean isflush, isStraight, isBoth;
 	
 	public void check4ofkind(int[] list)
 	{
+            
 		
 		for(int i = 0; i<5; i++)
 		{
+                    boolean isfirstfind=true;
 			for(int g = 0; g<5; g++)
 			{
 				if(g==i)
@@ -131,6 +133,11 @@ public boolean isflush, isStraight, isBoth;
 				}
 				if(list[i]==list[g])
 				{
+                                    if(isfirstfind)
+                                    {
+                                        counter[i]++;
+                                        isfirstfind=false;
+                                    }
 					counter[i]++;
 				}
 			}
