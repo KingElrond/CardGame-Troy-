@@ -191,16 +191,16 @@ tempOrder = new int[5];
         
         /* for checking if it detects
         h1d[0]="D";
-        h1d[1]="D";
-        h1d[2]="D";
+        h1d[1]="H";
+        h1d[2]="S";
         h1d[3]="D";
         h1d[4]="D";
         
         hand1Num[0]=1;
-        hand1Num[1]=2;
-        hand1Num[2]=3;
-        hand1Num[3]=4;
-        hand1Num[4]=5;
+        hand1Num[1]=1;
+        hand1Num[2]=1;
+        hand1Num[3]=1;
+        hand1Num[4]=1;
         */
         
         
@@ -281,24 +281,6 @@ tempOrder = new int[5];
         		is4k4=true;
         	}
         	
-        	//checks for 5 of kind
-        	
-        	if(counter1[i]==5)
-        	{
-        		is5k1=true;
-        	}
-        	if(counter2[i]==5)
-        	{
-        		is5k2=true;
-        	}
-        	if(counter3[i]==5)
-        	{
-        		is5k3=true;
-        	}
-        	if(counter4[i]==5)
-        	{
-        		is5k4=true;
-        	}
         }
         
         
@@ -456,11 +438,6 @@ tempOrder = new int[5];
         System.out.println(is4k2);
         System.out.println(is4k3);
         System.out.println(is4k4);
-        System.out.println("5 of a kinds");
-        System.out.println(is5k1);
-        System.out.println(is5k2);
-        System.out.println(is5k3);
-        System.out.println(is5k4);
         
         
         //this checks for straightflush and only ends program when 1 is found
@@ -477,21 +454,20 @@ tempOrder = new int[5];
         {
         	flushexist=true;
         }
-        
+        */
         if(is3k1 || is3k2 || is3k3 || is3k4)
         {
         	flushexist=true;
+        	
         }
         
         if(is4k1 || is4k2 || is4k3 || is4k4)
         {
-        	flushexist=true;
+        	
+            	flushexist=true;
+            
         }
-        */
-        if(is5k1 || is5k2 || is5k3 || is5k4)
-        {
-        	flushexist=true;
-        }
+        
         
         
         /* for benchmarking your pc. this checks if there are 2 straightflushes. the chance of this occurring is 0.00000000023687585
