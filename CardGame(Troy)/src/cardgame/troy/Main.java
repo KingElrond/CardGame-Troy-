@@ -21,6 +21,7 @@ public class Main {
     	boolean flushexist = false;
     	while(!flushexist)
     	{
+int hkt1 = 0,hkt2 = 0,hkt3 = 0,hkt4 = 0;
 String[] hand1, h1S, p2hand, p3hand, p4hand, h2S, h3S,h4S,h1d,h2d,h3d,h4d;
 int[] hand1Num, origh1, tempOrder, origh2, origh3, hand2Num, hand3Num, hand4Num, origh4, counter1,counter2,counter3,counter4;
 boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,is3k1=false,is3k2=false,is3k3=false,is3k4=false,is4k1=false,is4k2=false,is4k3=false,is4k4=false,is5k1=false,is5k2=false,is5k3=false,is5k4=false;
@@ -248,18 +249,22 @@ tempOrder = new int[5];
         	if(counter1[i]==3)
         	{
         		is3k1=true;
+        		hkt1=hand1Num[2];
         	}
         	if(counter2[i]==3)
         	{
         		is3k2=true;
+        		hkt2=hand2Num[2];
         	}
         	if(counter3[i]==3)
         	{
         		is3k3=true;
+        		hkt3=hand3Num[2];
         	}
         	if(counter4[i]==3)
         	{
         		is3k4=true;
+        		hkt4=hand4Num[2];
         	}
         	
         	//checks for 4 of kind
@@ -267,18 +272,22 @@ tempOrder = new int[5];
         	if(counter1[i]==4)
         	{
         		is4k1=true;
+        		hkt1=hand1Num[2];
         	}
         	if(counter2[i]==4)
         	{
         		is4k2=true;
+        		hkt2=hand2Num[2];
         	}
         	if(counter3[i]==4)
         	{
         		is4k3=true;
+        		hkt3=hand3Num[2];
         	}
         	if(counter4[i]==4)
         	{
         		is4k4=true;
+        		hkt4=hand4Num[2];
         	}
         	
         }
@@ -430,15 +439,46 @@ tempOrder = new int[5];
         System.out.println(isfs4);
         System.out.println("3 of a kinds");
         System.out.println(is3k1);
+        if(is3k1)
+        {
+        	System.out.println("card type: " + hkt1);
+        }
         System.out.println(is3k2);
+        if(is3k2)
+        {
+        	System.out.println("card type: " + hkt2);
+        }
         System.out.println(is3k3);
+        if(is3k3)
+        {
+        	System.out.println("card type: " + hkt3);
+        }
         System.out.println(is3k4);
+        if(is3k4)
+        {
+        	System.out.println("card type: " + hkt4);
+        }
         System.out.println("4 of a kinds");
         System.out.println(is4k1);
+        if(is4k1)
+        {
+        	System.out.println("card type: " + hkt1);
+        }
         System.out.println(is4k2);
+        if(is4k2)
+        {
+        	System.out.println("card type: " + hkt2);
+        }
         System.out.println(is4k3);
+        if(is4k3)
+        {
+        	System.out.println("card type: " + hkt3);
+        }
         System.out.println(is4k4);
-        
+        if(is4k4)
+        {
+        	System.out.println("card type: " + hkt4);
+        }
         
         //this checks for straightflush and only ends program when 1 is found
         /*
@@ -454,13 +494,13 @@ tempOrder = new int[5];
         {
         	flushexist=true;
         }
-        */
+        
         if(is3k1 || is3k2 || is3k3 || is3k4)
         {
         	flushexist=true;
         	
         }
-        
+        */
         if(is4k1 || is4k2 || is4k3 || is4k4)
         {
         	
