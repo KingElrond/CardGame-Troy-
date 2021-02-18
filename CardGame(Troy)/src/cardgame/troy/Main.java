@@ -24,7 +24,7 @@ public class Main {
 int hkt1 = 0,hkt2 = 0,hkt3 = 0,hkt4 = 0;
 String[] hand1, h1S, p2hand, p3hand, p4hand, h2S, h3S,h4S,h1d,h2d,h3d,h4d;
 int[] hand1Num, origh1, tempOrder, origh2, origh3, hand2Num, hand3Num, hand4Num, origh4, counter1,counter2,counter3,counter4;
-boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,is3k1=false,is3k2=false,is3k3=false,is3k4=false,is4k1=false,is4k2=false,is4k3=false,is4k4=false,is5k1=false,is5k2=false,is5k3=false,is5k4=false;
+boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,is3k1=false,is3k2=false,is3k3=false,is3k4=false,is4k1=false,is4k2=false,is4k3=false,is4k4=false,is5k1=false,is5k2=false,is5k3=false,is5k4=false, isfh=false,isfh2=false,isfh3=false,isfh4=false;
 hand1 = new String[5];
 p2hand = new String[5];
 p3hand = new String[5];
@@ -246,25 +246,103 @@ tempOrder = new int[5];
         
         for(int i=0; i<5; i++)
         {
+        	if(counter1[i]==2)
+        	{
+        		for(int g=0; g<5; g++)
+        		{
+        			if(counter1[g]==3)
+        			{
+        				is3k1=true;
+        				hkt1=hand1Num[2];
+        				isfh=true;
+        			}
+        		}
+        	}
+        	if(counter2[i]==2)
+        	{
+        		for(int g=0; g<5; g++)
+        		{
+        			if(counter2[g]==3)
+        			{
+        				is3k2=true;
+        				hkt2=hand2Num[2];
+        				isfh2=true;
+        			}
+        		}
+        	}
+        	if(counter3[i]==2)
+        	{
+        		for(int g=0; g<5; g++)
+        		{
+        			if(counter3[g]==3)
+        			{
+        				is3k3=true;
+        				hkt3=hand3Num[2];
+        				isfh3=true;
+        			}
+        		}
+        	}
+        	if(counter4[i]==2)
+        	{
+        		for(int g=0; g<5; g++)
+        		{
+        			if(counter4[g]==3)
+        			{
+        				is3k4=true;
+        				hkt4=hand4Num[2];
+        				isfh4=true;
+        			}
+        		}
+        	}
+        	
+        	
         	if(counter1[i]==3)
         	{
         		is3k1=true;
         		hkt1=hand1Num[2];
+        		for(int g=0; g<5; g++)
+        		{
+        			if(counter1[g]==2)
+        			{
+        				isfh=true;
+        			}
+        		}
         	}
         	if(counter2[i]==3)
         	{
         		is3k2=true;
         		hkt2=hand2Num[2];
+        		for(int g=0; g<5; g++)
+        		{
+        			if(counter2[g]==2)
+        			{
+        				isfh2=true;
+        			}
+        		}
         	}
         	if(counter3[i]==3)
         	{
         		is3k3=true;
         		hkt3=hand3Num[2];
+        		for(int g=0; g<5; g++)
+        		{
+        			if(counter3[g]==2)
+        			{
+        				isfh3=true;
+        			}
+        		}
         	}
         	if(counter4[i]==3)
         	{
         		is3k4=true;
         		hkt4=hand4Num[2];
+        		for(int g=0; g<5; g++)
+        		{
+        			if(counter4[g]==2)
+        			{
+        				isfh4=true;
+        			}
+        		}
         	}
         	
         	//checks for 4 of kind
@@ -479,6 +557,28 @@ tempOrder = new int[5];
         {
         	System.out.println("card type: " + hkt4);
         }
+        System.out.println("Full Houses");
+        System.out.println(isfh);
+        if(is3k1)
+        {
+        	System.out.println("3 of a kind card type: " + hkt1);
+        }
+        System.out.println(isfh2);
+        if(is3k2)
+        {
+        	System.out.println("3 of a kind card type: " + hkt2);
+        }
+        System.out.println(isfh3);
+        if(is3k3)
+        {
+        	System.out.println("3 of a kind card type: " + hkt3);
+        }
+        System.out.println(isfh4);
+        if(is3k4)
+        {
+        	System.out.println("3 of a kind card type: " + hkt4);
+        }
+        
         
         //this checks for straightflush and only ends program when 1 is found
         /*
@@ -500,12 +600,17 @@ tempOrder = new int[5];
         	flushexist=true;
         	
         }
-        */
+        
         if(is4k1 || is4k2 || is4k3 || is4k4)
         {
         	
             	flushexist=true;
             
+        }
+        */
+        if(isfh || isfh2 || isfh3 || isfh4)
+        {
+        	flushexist=true;
         }
         
         
