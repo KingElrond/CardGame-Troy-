@@ -11,6 +11,7 @@ import java.util.Arrays;
  *
  * @author troyd
  */
+
 public class Main {
 
     /**
@@ -24,7 +25,7 @@ public class Main {
 int hkt1 = 0,hkt2 = 0,hkt3 = 0,hkt4 = 0;
 String[] hand1, h1S, p2hand, p3hand, p4hand, h2S, h3S,h4S,h1d,h2d,h3d,h4d;
 int[] hand1Num, origh1, tempOrder, origh2, origh3, hand2Num, hand3Num, hand4Num, origh4, counter1,counter2,counter3,counter4;
-boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,is3k1=false,is3k2=false,is3k3=false,is3k4=false,is4k1=false,is4k2=false,is4k3=false,is4k4=false,is5k1=false,is5k2=false,is5k3=false,is5k4=false, isfh=false,isfh2=false,isfh3=false,isfh4=false;
+boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,is3k1=false,is3k2=false,is3k3=false,is3k4=false,is4k1=false,is4k2=false,is4k3=false,is4k4=false, isfh=false,isfh2=false,isfh3=false,isfh4=false;
 hand1 = new String[5];
 p2hand = new String[5];
 p3hand = new String[5];
@@ -578,6 +579,15 @@ tempOrder = new int[5];
         {
         	System.out.println("3 of a kind card type: " + hkt4);
         }
+        
+        //figuring out who won
+        
+        CheckWinner cw = new CheckWinner();
+        cw.recieve24bools(isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,is3k1,is3k2,is3k3,is3k4,is4k1,is4k2,is4k3,is4k4, isfh,isfh2,isfh3,isfh4);
+        cw.recievestringandintarrs(hand1Num,hand2Num,hand3Num,hand4Num, h1S, h2S, h3S, h4S, h1d, h2d, h3d, h4d);
+        
+        
+        
         
         
         //this checks for straightflush and only ends program when 1 is found
