@@ -50,34 +50,200 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 	
 	public String[] findWinner()
 	{
+		int mn1=h1n[2],mn2=h2n[2],mn3=h3n[2],mn4=h4n[2];
 		String[] winner= new String[3];
-		
-		//region straightflushcheck
+		boolean wfound=false;
+		//[start] straightflushcheck
 		if(isfs1)
 		{
 			winner[1]="Human";
 			winner[2]="Straight Flush";
+			wfound=true;
 		}
 		if(isfs2)
 		{
 			winner[1]="Player 2";
 			winner[2]="Straight Flush";
+			wfound=true;
 		}
 		if(isfs3)
 		{
 			winner[1]="Player 3";
 			winner[2]="Straight Flush";
+			wfound=true;
 		}
 		if(isfs4)
 		{
 			winner[1]="Player 4";
 			winner[2]="Straight Flush";
+			wfound=true;
 		}
-		//endregion straightflushcheck
+		//[end] straightflushcheck
 		
+		//[start] fourofkindcheck
 		
-		
-		
+		if(!wfound)
+		{
+			int counter =0;
+			if(is4k1)
+			{
+				counter++;
+			}
+			if(is4k2)
+			{
+				counter++;
+			}
+			if(is4k3)
+			{
+				counter++;
+			}
+			if(is4k4)
+			{
+				counter++;
+			}
+			
+			if(counter>1)
+			{
+				if(is4k1)
+				{
+					if(is4k2)
+					{
+						if(is4k3)
+						{
+							if(is4k4)
+							{
+								if(mn1 < mn4 && mn2 < mn4 && mn3 < mn4)
+								{
+									winner[1]="Player 4";
+									winner[2]="four of a kind of: " + mn4;
+								} else if(mn4 < mn1 && mn2 < mn1 && mn3 < mn1)
+								{
+									winner[1]="Player 1";
+									winner[2]="four of a kind of: " + mn1;
+								} else if(mn4 < mn2 && mn1 < mn2 && mn3 < mn2)
+								{
+									winner[1]="Player 2";
+									winner[2]="four of a kind of: " + mn2;
+								} else if(mn4 < mn3 && mn2 < mn3 && mn1 < mn3)
+								{
+									winner[1]="Player 3";
+									winner[2]="four of a kind of: " + mn3;
+								}
+								
+							} else
+							{
+								if(mn1 < mn3 && mn2 < mn3)
+								{
+									winner[1]="Player 3";
+									winner[2]="four of a kind of: " + mn3;
+								} else if(mn3 < mn1 && mn2 < mn1)
+								{
+									winner[1]="Player 1";
+									winner[2]="four of a kind of: " + mn1;
+								} else if(mn3 < mn2 && mn1 < mn2)
+								{
+									winner[1]="Player 2";
+									winner[2]="four of a kind of: " + mn2;
+								}
+							}
+						}
+						else if(is4k4)
+						{
+							if(mn1 < mn4 && mn2 < mn4)
+							{
+								winner[1]="Player 4";
+								winner[2]="four of a kind of: " + mn4;
+							} else if(mn4 < mn1 && mn2 < mn1)
+							{
+								winner[1]="Player 1";
+								winner[2]="four of a kind of: " + mn1;
+							} else if(mn4 < mn2 && mn1 < mn2)
+							{
+								winner[1]="Player 2";
+								winner[2]="four of a kind of: " + mn2;
+							}
+						} else
+						{
+							if(mn2 < mn1)
+							{
+								winner[1]="Player 1";
+								winner[2]="four of a kind of: " + mn1;
+							} else if(mn1 < mn2)
+							{
+								winner[1]="Player 2";
+								winner[2]="four of a kind of: " + mn2;
+							}
+						}
+					}
+					else if(is4k3)
+					{
+						if(is4k4)
+						{
+							if(mn1 < mn4 && mn3 < mn4)
+							{
+								winner[1]="Player 4";
+								winner[2]="four of a kind of: " + mn4;
+							} else if(mn4 < mn1 && mn3 < mn1)
+							{
+								winner[1]="Player 1";
+								winner[2]="four of a kind of: " + mn1;
+							} else if(mn4 < mn3 && mn1 < mn3)
+							{
+								winner[1]="Player 3";
+								winner[2]="four of a kind of: " + mn3;
+							}
+						} else
+						{
+							if(mn3 < mn1)
+							{
+								winner[1]="Player 1";
+								winner[2]="four of a kind of: " + mn1;
+							} else if(mn1 < mn3)
+							{
+								winner[1]="Player 3";
+								winner[2]="four of a kind of: " + mn3;
+							}
+						}
+					}
+					else if(is4k4)
+					{
+						if(mn1 < mn4)
+						{
+							winner[1]="Player 4";
+							winner[2]="four of a kind of: " + mn4;
+						} else if(mn4 < mn1)
+						{
+							winner[1]="Player 1";
+							winner[2]="four of a kind of: " + mn1;
+						}
+					}
+				}
+				else if(is4k2)
+				{
+					if(is4k3)
+					{
+						if(is4k4)
+						{
+							
+						}
+					}
+				}
+				else if(is4k3)
+				{
+					if(is4k4)
+					{
+						
+					}
+				}
+				else if(is4k4)
+				{
+					
+				}
+			}
+			
+			
+		}
+		//[end] fourofkindcheck
 		
 		
 		return winner;
