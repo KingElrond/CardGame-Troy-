@@ -48,7 +48,41 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 		isfh4=x;
 	}
 	
-	
+	public String[] findWinner()
+	{
+		String[] winner= new String[3];
+		
+		//region straightflushcheck
+		if(isfs1)
+		{
+			winner[1]="Human";
+			winner[2]="Straight Flush";
+		}
+		if(isfs2)
+		{
+			winner[1]="Player 2";
+			winner[2]="Straight Flush";
+		}
+		if(isfs3)
+		{
+			winner[1]="Player 3";
+			winner[2]="Straight Flush";
+		}
+		if(isfs4)
+		{
+			winner[1]="Player 4";
+			winner[2]="Straight Flush";
+		}
+		//endregion straightflushcheck
+		
+		
+		
+		
+		
+		
+		return winner;
+		
+	}
 	
 	
 	
