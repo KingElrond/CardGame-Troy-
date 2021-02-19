@@ -118,18 +118,22 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 								{
 									winner[1]="Player 4";
 									winner[2]="four of a kind of: " + mn4;
+									wfound=true;
 								} else if(mn4 < mn1 && mn2 < mn1 && mn3 < mn1)
 								{
 									winner[1]="Player 1";
 									winner[2]="four of a kind of: " + mn1;
+									wfound=true;
 								} else if(mn4 < mn2 && mn1 < mn2 && mn3 < mn2)
 								{
 									winner[1]="Player 2";
 									winner[2]="four of a kind of: " + mn2;
+									wfound=true;
 								} else if(mn4 < mn3 && mn2 < mn3 && mn1 < mn3)
 								{
 									winner[1]="Player 3";
 									winner[2]="four of a kind of: " + mn3;
+									wfound=true;
 								}
 								
 							} else
@@ -138,14 +142,17 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 								{
 									winner[1]="Player 3";
 									winner[2]="four of a kind of: " + mn3;
+									wfound=true;
 								} else if(mn3 < mn1 && mn2 < mn1)
 								{
 									winner[1]="Player 1";
 									winner[2]="four of a kind of: " + mn1;
+									wfound=true;
 								} else if(mn3 < mn2 && mn1 < mn2)
 								{
 									winner[1]="Player 2";
 									winner[2]="four of a kind of: " + mn2;
+									wfound=true;
 								}
 							}
 						}
@@ -155,14 +162,17 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 							{
 								winner[1]="Player 4";
 								winner[2]="four of a kind of: " + mn4;
+								wfound=true;
 							} else if(mn4 < mn1 && mn2 < mn1)
 							{
 								winner[1]="Player 1";
 								winner[2]="four of a kind of: " + mn1;
+								wfound=true;
 							} else if(mn4 < mn2 && mn1 < mn2)
 							{
 								winner[1]="Player 2";
 								winner[2]="four of a kind of: " + mn2;
+								wfound=true;
 							}
 						} else
 						{
@@ -170,10 +180,12 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 							{
 								winner[1]="Player 1";
 								winner[2]="four of a kind of: " + mn1;
+								wfound=true;
 							} else if(mn1 < mn2)
 							{
 								winner[1]="Player 2";
 								winner[2]="four of a kind of: " + mn2;
+								wfound=true;
 							}
 						}
 					}
@@ -185,14 +197,17 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 							{
 								winner[1]="Player 4";
 								winner[2]="four of a kind of: " + mn4;
+								wfound=true;
 							} else if(mn4 < mn1 && mn3 < mn1)
 							{
 								winner[1]="Player 1";
 								winner[2]="four of a kind of: " + mn1;
+								wfound=true;
 							} else if(mn4 < mn3 && mn1 < mn3)
 							{
 								winner[1]="Player 3";
 								winner[2]="four of a kind of: " + mn3;
+								wfound=true;
 							}
 						} else
 						{
@@ -200,10 +215,12 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 							{
 								winner[1]="Player 1";
 								winner[2]="four of a kind of: " + mn1;
+								wfound=true;
 							} else if(mn1 < mn3)
 							{
 								winner[1]="Player 3";
 								winner[2]="four of a kind of: " + mn3;
+								wfound=true;
 							}
 						}
 					}
@@ -213,10 +230,12 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 						{
 							winner[1]="Player 4";
 							winner[2]="four of a kind of: " + mn4;
+							wfound=true;
 						} else if(mn4 < mn1)
 						{
 							winner[1]="Player 1";
 							winner[2]="four of a kind of: " + mn1;
+							wfound=true;
 						}
 					}
 				}
@@ -230,14 +249,17 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 							{
 								winner[1]="Player 3";
 								winner[2]="four of a kind of: " + mn3;
+								wfound=true;
 							} else if(mn3 < mn4 && mn2 < mn4)
 							{
 								winner[1]="Player 4";
 								winner[2]="four of a kind of: " + mn4;
+								wfound=true;
 							} else if(mn3 < mn2 && mn4 < mn2)
 							{
 								winner[1]="Player 2";
 								winner[2]="four of a kind of: " + mn2;
+								wfound=true;
 							}
 						} else
 						{
@@ -245,10 +267,12 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 							{
 								winner[1]="Player 2";
 								winner[2]="four of a kind of: " + mn2;
+								wfound=true;
 							} else if(mn2 < mn3)
 							{
 								winner[1]="Player 3";
 								winner[2]="four of a kind of: " + mn3;
+								wfound=true;
 							}
 						}
 					}
@@ -261,14 +285,42 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 						{
 							winner[1]="Player 4";
 							winner[2]="four of a kind of: " + mn4;
+							wfound=true;
 						} else if(mn4 < mn3)
 						{
 							winner[1]="Player 3";
 							winner[2]="four of a kind of: " + mn3;
+							wfound=true;
 						}
 					}
 				}
 				else
+				{
+					
+				}
+			} else
+			{
+				if(is4k1)
+				{
+					winner[1]="Player 1";
+					winner[2]="four of a kind of: " + mn1;
+					wfound=true;
+				} else if(is4k2)
+				{
+					winner[1]="Player 2";
+					winner[2]="four of a kind of: " + mn2;
+					wfound=true;
+				} else if(is4k3)
+				{
+					winner[1]="Player 3";
+					winner[2]="four of a kind of: " + mn3;
+					wfound=true;
+				} else if(is4k4)
+				{
+					winner[1]="Player 4";
+					winner[2]="four of a kind of: " + mn4;
+					wfound=true;
+				} else
 				{
 					
 				}
@@ -278,6 +330,168 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 		}
 		//[end] fourofkindcheck
 		
+		
+		
+		//[start] fullhousecheck
+		if(!wfound)
+		{
+			int counter =0;
+			if(isfh)
+			{
+				
+			} else if(isfh2)
+			{
+				counter++;
+			} if(isfh3)
+			{
+			counter++;	
+			} if(isfh4)
+			{
+			counter++;	
+			}
+			if(counter>1)
+			{
+				if(isfh)
+				{
+					if(isfh2)
+					{
+						if(isfh3)
+						{
+							if(isfh4)
+							{
+								if(mn1 < mn4 && mn2 < mn4 && mn3 < mn4)
+								{
+									winner[1]="Player 4";
+									winner[2]="full house of: " + mn4;
+									wfound=true;
+								} else if(mn4 < mn1 && mn2 < mn1 && mn3 < mn1)
+								{
+									winner[1]="Player 1";
+									winner[2]="full house of: " + mn1;
+									wfound=true;
+								} else if(mn4 < mn2 && mn1 < mn2 && mn3 < mn2)
+								{
+									winner[1]="Player 2";
+									winner[2]="full house of: " + mn2;
+									wfound=true;
+								} else if(mn4 < mn3 && mn2 < mn3 && mn1 < mn3)
+								{
+									winner[1]="Player 3";
+									winner[2]="full house of: " + mn3;
+									wfound=true;
+								}
+							} else
+							{
+								//resume work here
+							}
+						} else if(isfh4)
+						{
+							
+						} else
+						{
+							
+						}
+					} else if(isfh3)
+					{
+						
+					} else if(isfh4)
+					{
+						
+					}
+				} else if(isfh2)
+				{
+					
+				} else if(isfh3)
+				{
+					
+				} else if(isfh4)
+				{
+					
+				}
+				
+			}else
+			{
+				if(isfh)
+				{
+					winner[1]="Player 1";
+					winner[2]="full house of: " + mn1;
+					wfound=true;
+				} else if(isfh2)
+				{
+					winner[1]="Player 2";
+					winner[2]="full house of: " + mn2;
+					wfound=true;
+				} else if(isfh3)
+				{
+					winner[1]="Player 3";
+					winner[2]="full house of: " + mn3;
+					wfound=true;
+				} else if(isfh4)
+				{
+					winner[1]="Player 4";
+					winner[2]="full house of: " + mn4;
+					wfound=true;
+				} else
+				{
+					
+				}
+			}
+			
+		}
+		
+		//[end] fullhousecheck
+		
+		
+		
+		//[start] flushcheck
+		if(!wfound)
+		{
+			
+		}
+		
+		//[end]flushcheck
+				
+		
+		
+		//[start] straightcheck
+		if(!wfound)
+		{
+			
+		}
+		
+		//[end] straightcheck
+		
+		
+		
+		//[start] threeofkindcheck
+		if(!wfound)
+		{
+			
+		}
+		
+		//[end] threeofkindcheck
+		
+		
+		
+		//[start] paircheck
+		if(!wfound)
+		{
+			
+		}
+		
+		//[end] paircheck
+		
+		
+		
+		//[start] nopaircheck
+		if(!wfound)
+		{
+			
+		}
+		
+		//[end] nopaircheck
+		
+
 		
 		return winner;
 		
