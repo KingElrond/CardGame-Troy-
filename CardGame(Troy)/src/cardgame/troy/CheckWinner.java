@@ -80,6 +80,8 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 		}
 		//[end] straightflushcheck
 		
+		
+		
 		//[start] fourofkindcheck
 		
 		if(!wfound)
@@ -224,7 +226,30 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 					{
 						if(is4k4)
 						{
-							
+							if(mn4 < mn3 && mn4 < mn3)
+							{
+								winner[1]="Player 3";
+								winner[2]="four of a kind of: " + mn3;
+							} else if(mn3 < mn4 && mn2 < mn4)
+							{
+								winner[1]="Player 4";
+								winner[2]="four of a kind of: " + mn4;
+							} else if(mn3 < mn2 && mn4 < mn2)
+							{
+								winner[1]="Player 2";
+								winner[2]="four of a kind of: " + mn2;
+							}
+						} else
+						{
+							if(mn3 < mn2)
+							{
+								winner[1]="Player 2";
+								winner[2]="four of a kind of: " + mn2;
+							} else if(mn2 < mn3)
+							{
+								winner[1]="Player 3";
+								winner[2]="four of a kind of: " + mn3;
+							}
 						}
 					}
 				}
@@ -232,10 +257,18 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 				{
 					if(is4k4)
 					{
-						
+						if(mn3 < mn4)
+						{
+							winner[1]="Player 4";
+							winner[2]="four of a kind of: " + mn4;
+						} else if(mn4 < mn3)
+						{
+							winner[1]="Player 3";
+							winner[2]="four of a kind of: " + mn3;
+						}
 					}
 				}
-				else if(is4k4)
+				else
 				{
 					
 				}
