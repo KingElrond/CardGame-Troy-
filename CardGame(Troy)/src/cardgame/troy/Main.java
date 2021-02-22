@@ -251,7 +251,7 @@ tempOrder = new int[5];
         isS1=eh.retStraight();
         eh.straightFlush();
         isfs1=eh.retisboth();
-        eh.check4ofkind(hand1Num);
+        eh.checkmatches(hand1Num);
         counter1=eh.getcounter();
         
         EvaluateHand eh2 = new EvaluateHand();
@@ -261,7 +261,7 @@ tempOrder = new int[5];
         isS2=eh2.retStraight();
         eh2.straightFlush();
         isfs2=eh2.retisboth();
-        eh2.check4ofkind(hand2Num);
+        eh2.checkmatches(hand2Num);
         counter2=eh2.getcounter();
         
         EvaluateHand eh3 = new EvaluateHand();
@@ -271,7 +271,7 @@ tempOrder = new int[5];
         isS3=eh3.retStraight();
         eh3.straightFlush();
         isfs3=eh3.retisboth();
-        eh3.check4ofkind(hand3Num);
+        eh3.checkmatches(hand3Num);
         counter3=eh3.getcounter();
         
         EvaluateHand eh4 = new EvaluateHand();
@@ -281,7 +281,7 @@ tempOrder = new int[5];
         isS4=eh4.retStraight();
         eh4.straightFlush();
         isfs4=eh4.retisboth();
-        eh4.check4ofkind(hand4Num);
+        eh4.checkmatches(hand4Num);
         counter4=eh4.getcounter();
         
         for(int i=0; i<5; i++)

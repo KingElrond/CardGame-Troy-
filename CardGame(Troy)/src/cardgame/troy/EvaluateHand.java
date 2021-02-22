@@ -112,7 +112,7 @@ public boolean isflush, isStraight, isBoth;
 		
 	}
 	
-	public void check4ofkind(int[] list)
+	public void checkmatches(int[] list)
 	{
             
 		
