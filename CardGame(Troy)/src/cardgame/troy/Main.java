@@ -676,6 +676,7 @@ tempOrder = new int[5];
         System.out.println(runsthruprogram);
         System.out.println();
         /*
+        System.out.println("printing deck");
         System.out.println(dm.drawCard());
         System.out.println(dm.ShuffledDeck);
         for(int g: dm.ShuffledDeck)
