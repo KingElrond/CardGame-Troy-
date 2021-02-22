@@ -359,6 +359,7 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 						{
 							if(isfh4)
 							{
+								//players 1,2,3,4 all have full house
 								if(mn1 < mn4 && mn2 < mn4 && mn3 < mn4)
 								{
 									winner[1]="Player 4";
@@ -382,21 +383,21 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 								}
 							} else
 							{
-								//resume work here
+								//players 1,2,3 all have a full house
 							}
 						} else if(isfh4)
 						{
-							
+							//players 1,2,4 all have a full house
 						} else
 						{
-							
+							//players 1,2 all have a full house
 						}
 					} else if(isfh3)
 					{
-						
+						//players 1,3 all have a full house
 					} else if(isfh4)
 					{
-						
+						//players 1,4 all have a full house
 					}
 				} else if(isfh2)
 				{

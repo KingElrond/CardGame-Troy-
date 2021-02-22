@@ -48,7 +48,7 @@ public boolean isflush, isStraight, isBoth;
                     j = arr[i] - min; 
   
                 // if the value at index j is negative then 
-                // there is repitition 
+                // there is repetition 
                 if (arr[j] > 0)  
                     arr[j] = -arr[j]; 
                 else

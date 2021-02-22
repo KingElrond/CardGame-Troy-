@@ -17,6 +17,7 @@ public class Main {
     /**
      * @param args the command line arguments
      */
+	//Check line 295 for manual hand value setting
     public static void main(String[] args) {
     	int runsthruprogram = 0;
     	boolean flushexist = false;
@@ -203,6 +204,44 @@ tempOrder = new int[5];
         hand1Num[2]=1;
         hand1Num[3]=1;
         hand1Num[4]=1;
+        
+        h2d[0]="D";
+        h2d[1]="H";
+        h2d[2]="S";
+        h2d[3]="D";
+        h2d[4]="D";
+        
+        hand2Num[0]=1;
+        hand2Num[1]=1;
+        hand2Num[2]=1;
+        hand2Num[3]=1;
+        hand2Num[4]=1;
+        
+        h3d[0]="D";
+        h3d[1]="H";
+        h3d[2]="S";
+        h3d[3]="D";
+        h3d[4]="D";
+        
+        hand3Num[0]=1;
+        hand3Num[1]=1;
+        hand3Num[2]=1;
+        hand3Num[3]=1;
+        hand3Num[4]=1;
+        
+        h4d[0]="D";
+        h4d[1]="H";
+        h4d[2]="S";
+        h4d[3]="D";
+        h4d[4]="D";
+        
+        hand4Num[0]=1;
+        hand4Num[1]=1;
+        hand4Num[2]=1;
+        hand4Num[3]=1;
+        hand4Num[4]=1;
+        
+        
         */
         
         
