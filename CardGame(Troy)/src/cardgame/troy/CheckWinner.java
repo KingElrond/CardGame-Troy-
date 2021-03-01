@@ -1,8 +1,10 @@
 package cardgame.troy;
 
 public class CheckWinner {
+	public int p1pn,p2pn,p3pn,p4pn;
 	public int[] h1n,h2n,h3n,h4n;
 	public String[] h1s,h2s,h3s,h4s,h1sb,h2sb,h3sb,h4sb;
+	public String p1="Player 1",p2="Player 2",p3="Player 3",p4="Player 4";
 public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,is3k1,is3k2,is3k3,is3k4,is4k1,is4k2,is4k3,is4k4, isfh,isfh2,isfh3,isfh4;
 	public void recievestringandintarrs(int[] h1, int[] h2, int[] h3, int[] h4, String[] s1,String[] s2,String[] s3,String[] s4,String[] s1b,String[] s2b,String[] s3b,String[] s4b)
 	{
@@ -53,6 +55,10 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 		int mn1=h1n[2],mn2=h2n[2],mn3=h3n[2],mn4=h4n[2];
 		String[] winner= new String[3];
 		boolean wfound=false;
+		
+		
+		
+		
 		//[start] straightflushcheck
 		if(isfs1)
 		{
@@ -333,112 +339,178 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 		
 		
 		//[start] fullhousecheck
-		if(!wfound)
-		{
-			int counter =0;
-			if(isfh)
+		
+			if(isfh || isfh2 || isfh3 || isfh4)
 			{
-				
-			} else if(isfh2)
+			//[start] findsecondpairnum
+			
+			for(int abc=0; abc<5; abc++)
 			{
-				counter++;
-			} if(isfh3)
-			{
-			counter++;	
-			} if(isfh4)
-			{
-			counter++;	
-			}
-			if(counter>1)
-			{
-				if(isfh)
+				if(mn1!=h1n[abc])
 				{
-					if(isfh2)
-					{
-						if(isfh3)
-						{
-							if(isfh4)
-							{
-								//players 1,2,3,4 all have full house
-								if(mn1 < mn4 && mn2 < mn4 && mn3 < mn4)
-								{
-									winner[1]="Player 4";
-									winner[2]="full house of: " + mn4;
-									wfound=true;
-								} else if(mn4 < mn1 && mn2 < mn1 && mn3 < mn1)
-								{
-									winner[1]="Player 1";
-									winner[2]="full house of: " + mn1;
-									wfound=true;
-								} else if(mn4 < mn2 && mn1 < mn2 && mn3 < mn2)
-								{
-									winner[1]="Player 2";
-									winner[2]="full house of: " + mn2;
-									wfound=true;
-								} else if(mn4 < mn3 && mn2 < mn3 && mn1 < mn3)
-								{
-									winner[1]="Player 3";
-									winner[2]="full house of: " + mn3;
-									wfound=true;
-								}
-							} else
-							{
-								//players 1,2,3 all have a full house
-							}
-						} else if(isfh4)
-						{
-							//players 1,2,4 all have a full house
-						} else
-						{
-							//players 1,2 all have a full house
-						}
-					} else if(isfh3)
-					{
-						//players 1,3 all have a full house
-					} else if(isfh4)
-					{
-						//players 1,4 all have a full house
-					}
-				} else if(isfh2)
-				{
-					
-				} else if(isfh3)
-				{
-					
-				} else if(isfh4)
-				{
-					
+					p1pn=h1n[abc];
 				}
-				
-			}else
-			{
-				if(isfh)
+				if(mn2!=h2n[abc])
 				{
-					winner[1]="Player 1";
-					winner[2]="full house of: " + mn1;
-					wfound=true;
-				} else if(isfh2)
+					p2pn=h2n[abc];
+				}
+				if(mn3!=h3n[abc])
 				{
-					winner[1]="Player 2";
-					winner[2]="full house of: " + mn2;
-					wfound=true;
-				} else if(isfh3)
+					p3pn=h3n[abc];
+				}
+				if(mn4!=h4n[abc])
 				{
-					winner[1]="Player 3";
-					winner[2]="full house of: " + mn3;
-					wfound=true;
-				} else if(isfh4)
-				{
-					winner[1]="Player 4";
-					winner[2]="full house of: " + mn4;
-					wfound=true;
-				} else
-				{
-					
+					p4pn=h4n[abc];
 				}
 			}
 			
-		}
+			//[end] findsecondpairnum
+			if(mn1==1)
+			{
+				mn1=15;
+			}
+			if(mn2==1)
+			{
+			mn2=15;	
+			}
+			if(mn3==1)
+			{
+				mn3=15;
+			}
+			if(mn4==1)
+			{
+				mn4=15;
+			}
+			int highest=0;
+			int[] t1 = new int[4], t2 = new int[4];
+			if(isfh)
+			{
+				t1[0]=mn1;
+				t2[0]=p1pn;
+			} 
+			if(isfh2)
+			{
+				t1[1]=mn2;
+				t2[1]=p2pn;
+			}
+			if(isfh3)
+			{
+				t1[2]=mn3;
+				t2[2]=p3pn;
+			}
+			if(isfh4)
+			{
+				t1[3]=mn4;
+				t2[3]=p4pn;
+			}
+			
+			
+			
+			
+			for(int fi = 0; fi<4; fi++)
+			{
+				int temp=t1[fi];
+				if(temp>highest)
+				{
+					highest=temp;
+				}
+			}
+			if(highest!=0)
+			{
+				if(highest==mn1)
+				{
+					winner[1]=p1;
+					wfound=true;
+				}
+				if(highest==mn2)
+				{
+					if(wfound=true)
+					{
+						if(winner[1]==p1)
+						{
+							if(p1pn<p2pn)
+							{
+								winner[1]=p2;
+							}
+						}
+						
+					} else
+					{
+					winner[1]=p2;
+					wfound=true;
+					}
+				}
+				if(highest==mn3)
+				{
+					if(wfound=true)
+					{
+						if(winner[1]==p1)
+						{
+							if(p1pn<p3pn)
+							{
+								winner[1]=p3;
+							}
+						} else if(winner[1]==p2)
+						{
+							if(p2pn<p3pn)
+							{
+								winner[1]=p3;
+							}
+						}
+					} else
+					{
+					winner[1]=p3;
+					wfound=true;
+					}
+				}
+				if(highest==mn4)
+				{
+					if(wfound=true)
+					{
+						if(winner[1]==p1)
+						{
+							if(p1pn<p3pn)
+							{
+								winner[1]=p4;
+							}
+						} else if(winner[1]==p2)
+						{
+							if(p2pn<p3pn)
+							{
+								winner[1]=p4;
+							}
+						} else if(winner[1]==p3)
+						{
+							if(p3pn<p4pn)
+							{
+								winner[1]=p4;
+							}
+						}
+					} else 
+					{
+					winner[1]=p4;
+					wfound=true;
+					}
+				}
+			}
+			
+			if(winner[1]==p1)
+			{
+				winner[2]="Full House of: " + mn1 + " and " + p1pn;
+			} else if(winner[1]==p2)
+			{
+				winner[2]="Full House of: " + mn2 + " and " + p2pn;
+			} else if(winner[1]==p3)
+			{
+				winner[2]="Full House of: " + mn3 + " and " + p3pn;
+			} else if(winner[1]==p4)
+			{
+				winner[2]="Full House of: " + mn4 + " and " + p4pn;
+			}
+			
+
+			}
+		
 		
 		//[end] fullhousecheck
 		
