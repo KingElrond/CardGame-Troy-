@@ -339,7 +339,8 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 		
 		
 		//[start] fullhousecheck
-		
+		if(!wfound)
+		{
 			if(isfh || isfh2 || isfh3 || isfh4)
 			{
 			//[start] findsecondpairnum
@@ -510,7 +511,7 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 			
 
 			}
-		
+		}
 		
 		//[end] fullhousecheck
 		
