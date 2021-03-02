@@ -425,73 +425,18 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 				}
 				if(highest==mn2)
 				{
-					if(wfound=true)
-					{
-						if(winner[1]==p1)
-						{
-							if(p1pn<p2pn)
-							{
-								winner[1]=p2;
-							}
-						}
-						
-					} else
-					{
 					winner[1]=p2;
 					wfound=true;
-					}
 				}
 				if(highest==mn3)
 				{
-					if(wfound=true)
-					{
-						if(winner[1]==p1)
-						{
-							if(p1pn<p3pn)
-							{
-								winner[1]=p3;
-							}
-						} else if(winner[1]==p2)
-						{
-							if(p2pn<p3pn)
-							{
-								winner[1]=p3;
-							}
-						}
-					} else
-					{
 					winner[1]=p3;
 					wfound=true;
-					}
 				}
 				if(highest==mn4)
 				{
-					if(wfound=true)
-					{
-						if(winner[1]==p1)
-						{
-							if(p1pn<p3pn)
-							{
-								winner[1]=p4;
-							}
-						} else if(winner[1]==p2)
-						{
-							if(p2pn<p3pn)
-							{
-								winner[1]=p4;
-							}
-						} else if(winner[1]==p3)
-						{
-							if(p3pn<p4pn)
-							{
-								winner[1]=p4;
-							}
-						}
-					} else 
-					{
 					winner[1]=p4;
 					wfound=true;
-					}
 				}
 			}
 			
