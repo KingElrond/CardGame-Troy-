@@ -626,7 +626,7 @@ tempOrder = new int[5];
         cw.recievestringandintarrs(hand1Num,hand2Num,hand3Num,hand4Num, h1S, h2S, h3S, h4S, h1d, h2d, h3d, h4d);
         winner=cw.findWinner();
         System.out.println(winner[1] + " won with a " + winner[2]);
-        
+        //something
         
         //this checks for straightflush and only ends program when 1 is found
         
