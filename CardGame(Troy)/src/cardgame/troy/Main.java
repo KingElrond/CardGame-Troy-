@@ -634,10 +634,12 @@ tempOrder = new int[5];
         {
         	flushexist=true;
         }
+        
         if(isf1 || isf2 || isf3 || isf4)
         {
         	flushexist=true;
         }
+        
         if(isS1 || isS2 || isS3 || isS4)
         {
         	flushexist=true;
@@ -648,19 +650,19 @@ tempOrder = new int[5];
         	flushexist=true;
         	
         }
-        
+        */
         if(is4k1 || is4k2 || is4k3 || is4k4)
         {
         	
             	flushexist=true;
             
         }
-        */
+        /*
         if(isfh || isfh2 || isfh3 || isfh4)
         {
         	flushexist=true;
         }
-        
+        */
         
         
         /* for benchmarking your pc. this checks if there are 2 straightflushes. the chance of this occurring is 0.00000000023687585
