@@ -466,7 +466,57 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 		//[start] flushcheck
 		if(!wfound)
 		{
-			
+			if(isf1)
+			{
+				winner[1]="Player 1";
+				winner[2]="flush of: " + h1sb;
+				wfound=true;
+			}
+			if(isf2)
+			{
+				if(wfound)
+				{
+					winner[2]="tie between " + winner[1] + " and " + "Player 2";
+					winner[1]="tie";
+					
+				}
+				else
+				{
+				winner[1]="Player 2";
+				winner[2]="flush of: " + h2sb;
+				wfound=true;
+				}
+			}
+			if(isf3)
+			{
+				if(wfound)
+				{
+					winner[2]="tie between " + winner[1] + " and " + "Player 3";
+					winner[1]="tie";
+					
+				}
+				else
+				{
+				winner[1]="Player 3";
+				winner[2]="flush of: " + h3sb;
+				wfound=true;
+				}
+			}
+			if(isf4)
+			{
+				if(wfound)
+				{
+					winner[2]="tie between " + winner[1] + " and " + "Player 4";
+					winner[1]="tie";
+					
+				}
+				else
+				{
+				winner[1]="Player 4";
+				winner[2]="flush of: " + h4sb;
+				wfound=true;
+				}
+			}
 		}
 		
 		//[end]flushcheck
@@ -476,7 +526,57 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 		//[start] straightcheck
 		if(!wfound)
 		{
-			
+			if(isS1)
+			{
+				winner[1]="Player 1";
+				winner[2]="Straight";
+				wfound=true;
+			}
+			if(isS2)
+			{
+				if(wfound)
+				{
+					winner[2]="tie between " + winner[1] + " and " + "Player 2";
+					winner[1]="tie";
+					
+				}
+				else
+				{
+				winner[1]="Player 2";
+				winner[2]="Straight";
+				wfound=true;
+				}
+			}
+			if(isS3)
+			{
+				if(wfound)
+				{
+					winner[2]="tie between " + winner[1] + " and " + "Player 3";
+					winner[1]="tie";
+					
+				}
+				else
+				{
+				winner[1]="Player 3";
+				winner[2]="Straight";
+				wfound=true;
+				}
+			}
+			if(isS4)
+			{
+				if(wfound)
+				{
+					winner[2]="tie between " + winner[1] + " and " + "Player 4";
+					winner[1]="tie";
+					
+				}
+				else
+				{
+				winner[1]="Player 4";
+				winner[2]="Straight";
+				wfound=true;
+				}
+			}
 		}
 		
 		//[end] straightcheck
@@ -486,7 +586,57 @@ public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,i
 		//[start] threeofkindcheck
 		if(!wfound)
 		{
-			
+			if(is3k1)
+			{
+				winner[1]="Player 1";
+				winner[2]="3 of a kind of: " + mn1;
+				wfound=true;
+			}
+			if(is3k2)
+			{
+				if(wfound)
+				{
+					winner[2]="tie between " + winner[1] + " and " + "Player 2";
+					winner[1]="tie";
+					
+				}
+				else
+				{
+				winner[1]="Player 2";
+				winner[2]="3 of a kind of: " + mn2;
+				wfound=true;
+				}
+			}
+			if(is3k3)
+			{
+				if(wfound)
+				{
+					winner[2]="tie between " + winner[1] + " and " + "Player 3";
+					winner[1]="tie";
+					
+				}
+				else
+				{
+				winner[1]="Player 3";
+				winner[2]="3 of a kind of: " + mn3;
+				wfound=true;
+				}
+			}
+			if(is3k4)
+			{
+				if(wfound)
+				{
+					winner[2]="tie between " + winner[1] + " and " + "Player 4";
+					winner[1]="tie";
+					
+				}
+				else
+				{
+				winner[1]="Player 4";
+				winner[2]="3 of a kind of: " + mn4;
+				wfound=true;
+				}
+			}
 		}
 		
 		//[end] threeofkindcheck

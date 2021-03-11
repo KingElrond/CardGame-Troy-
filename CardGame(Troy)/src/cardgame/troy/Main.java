@@ -629,12 +629,12 @@ tempOrder = new int[5];
         //something
         
         //this checks for straightflush and only ends program when 1 is found
-        
+        /*
         if(isfs1 || isfs2 || isfs3 || isfs4)
         {
         	flushexist=true;
         }
-        /*
+        
         if(isf1 || isf2 || isf3 || isf4)
         {
         	flushexist=true;
@@ -650,7 +650,7 @@ tempOrder = new int[5];
         	flushexist=true;
         	
         }
-        */
+        
         if(is4k1 || is4k2 || is4k3 || is4k4)
         {
         	
@@ -662,7 +662,7 @@ tempOrder = new int[5];
         {
         	flushexist=true;
         }
-        
+        */
         
         
         /* for benchmarking your pc. this checks if there are 2 straightflushes. the chance of this occurring is 0.00000000023687585
@@ -673,7 +673,7 @@ tempOrder = new int[5];
         }
         System.out.println();
         */
-        
+        flushexist=true;
         runsthruprogram++;
         System.out.println(runsthruprogram);
         System.out.println();
