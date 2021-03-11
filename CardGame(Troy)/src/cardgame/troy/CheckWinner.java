@@ -8,6 +8,7 @@ public class CheckWinner {
 public boolean isf1,isf2,isf3,isf4,isS1,isS2,isS3,isS4,isfs1,isfs2,isfs3,isfs4,is3k1,is3k2,is3k3,is3k4,is4k1,is4k2,is4k3,is4k4, isfh,isfh2,isfh3,isfh4;
 	public void recievestringandintarrs(int[] h1, int[] h2, int[] h3, int[] h4, String[] s1,String[] s2,String[] s3,String[] s4,String[] s1b,String[] s2b,String[] s3b,String[] s4b)
 	{
+		//doingsmalledittofixeclipse
 		h1n=h1;
 		h2n=h2;
 		h3n=h3;
